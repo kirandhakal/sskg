@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Syangja Sundar Khaja Ghar - Delicious Nepali Cuisine</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <style>
+    
+    </style>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">Syangja Sundar Khaja Ghar</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#" id="order-now-btn">Order Now</a></li>
+        </ul>
+        <div class="hamburger" id="hamburger">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <h1>Syangja Sundar Khaja Ghar</h1>
+        <p>Experience the authentic taste of Nepali cuisine made with love and tradition</p>
+        <a href="#menu" class="btn">Explore Our Menu</a>
+    </section>
+
+    <!-- Food Menu Section -->
+    <section class="section" id="menu">
+        <div class="section-title">
+            <h2>Our Delicious Menu</h2>
+        </div>
+        
+        <div class="food-categories">
+            <button class="category-btn active" data-category="all">All</button>
+            <button class="category-btn" data-category="momo">Momo</button>
+            <button class="category-btn" data-category="newari">Newari Khaja</button>
+            <button class="category-btn" data-category="thali">Thali Set</button>
+            <button class="category-btn" data-category="snacks">Snacks</button>
+            <button class="category-btn" data-category="beverages">Beverages</button>
+        </div>
+        
+        <div class="food-grid">
+            <!-- Momo Items -->
+            
+            <div class="food-card" data-category="momo">
+                <div class="food-img" style="background-image: url('/api/placeholder/400/320')"></div>
+                <div class="food-info">
+                    <div class="food-title">
+                        <h3>Chicken Momo</h3>
+                        <span class="food-price">Rs. 160</span>
+                    </div>
+                    <p class="food-desc">Steamed dumplings filled with spiced minced chicken, served with tomato chutney.</p>
+                    <button class="add-to-cart" data-id="2" data-name="Chicken Momo" data-price="160">Add to Cart</button>
+                </div>
+            </div>
+            
+            <div class="food-card" data-category="momo">
+                <div class="food-img" style="background-image: url('/api/placeholder/400/320')"></div>
+                <div class="food-info">
+                    <div class="food-title">
+                        <h3>Veg Momo</h3>
+                        <span class="food-price">Rs. 130</span>
+                    </div>
+                    <p class="food-desc">Steamed dumplings filled with mixed vegetables, served with tomato chutney.</p>
+                    <button class="add-to-cart" data-id="3" data-name="Veg Momo" data-price="130">Add to Cart</button>
+                </div>
+            </div>
+            
+            <!-- Khana Items -->
+            <div class="food-card" data-category="newari">
+                <div class="food-img" style="background-image: url('/api/placeholder/400/320')"></div>
+                <div class="food-info">
+                    <div class="food-title">
+                        <h3>veg khana</h3>
+                        <span class="food-price">Rs.180</span>
+                    </div>
+                    <p class="food-desc"> dish with  rice,vegetable,pickles, dal.</p>
+                    <button class="add-to-cart" data-id="4" data-name="Samay Baji" data-price="250">Add to Cart</button>
+                </div>
+            </div>
+            
+            <div class="food-card" data-category="newari">
+                <div class="food-img" style="background-image: url('/api/placeholder/400/320')"></div>
+                <div class="food-info">
+                    <div class="food-title">
+                        <h3>chicken khana</h3>
+                        <span class="food-price">Rs. 280</span>
+                    </div>
+                    <p class="food-desc">Spicy grilled buffalo meat, marinated with traditional Newari spices.</p>
+                    <button class="add-to-cart" data-id="5" data-name="Choila" data-price="180">Add to Cart</button>
+                </div>
+            </div>
+            
+            <!-- Thali Sets -->
+            <div class="food-card" data-category="thali">
+                <div class="food-img" style="background-image: url('/api/placeholder/400/320')"></div>
+                <div class="food-info">
+                    <div class="food-title">
+                        <h3>Nepali Thali Set</h3>
+                        <span class="food-price">Rs. 350</span>
+                    </div>
+                    <p class="food-desc">Rice with lentil soup, seasonal vegetables, pickle, and meat curry.</p>
+                    <button class="add-to-cart" data-id="6" data-name="Nepali Thali Set" data-price="350">Add to Cart</button>
+                </div>
+            </div>
+            
+            <div class="food-card" data-category="thali">
+                <div class="food-img" style="background-image: url('/api/placeholder/400/320')"></div>
+                <div class="food-info">
+                    <div class="food-title">
+                        <h3>Veg Thali Set</h3>
+                        <span class="food-price">Rs. 250</span>
+                    </div>
+                    <p class="food-desc">Rice with lentil soup, seasonal vegetables, pickle, and paneer curry.</p>
+                    <button class="add-to-cart" data-id="7" data-name="Veg Thali Set" data-price="250">Add to Cart</button>
+                </div>
+            </div>
+            
+            <!-- Snacks -->
+            <div class="food-card" data-category="snacks">
+                <div class="food-img" style="background-image: url('/api/placeholder/400/320')"></div>
+                <div class="food-info">
+                    <div class="food-title">
+                        <h3>noodles</h3>
+                        <span class="food-price">Rs. 80</span>
+                    </div>
+                    <p class="food-desc">Spiced noodles with vegetables.</p>
+                    <button class="add-to-cart" data-id="8" data-name="Aloo Chop" data-price="80">Add to Cart</button>
+                </div>
+            </div>
+            
+       
+            <!-- Beverages -->
+            <div class="food-card" data-category="beverages">
+                <div class="food-img" style="background-image: url('/api/placeholder/400/320')"></div>
+                <div class="food-info">
+                    <div class="food-title">
+                        <h3>DRINKS</h3>
+                        <span class="food-price">Rs.50</span>
+                    </div>
+                    <p class="food-desc">coca cola, pespsi ,frotti , beer ,jucies ,can bottles etc</p>
+                    <button class="add-to-cart" data-id="10" data-name="Lassi" data-price="120">Add to Cart</button>
+                </div>
+            </div>
+            
+            <div class="food-card" data-category="beverages">
+                <div class="food-img" style="background-image: url('/api/placeholder/400/320')"></div>
+                <div class="food-info">
+                    <div class="food-title">
+                        <h3> Tea</h3>
+                        <span class="food-price">Rs.30</span>
+                    </div>
+                    <p class="food-desc">Traditional spiced tea with milk, cardamom, cinnamon, and ginger.</p>
+                    <button class="add-to-cart" data-id="11" data-name="Masala Tea" data-price="60">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-section">
+        <div class="contact-container">
+          <!-- Map Section -->
+          <div class="map-section">
+            <h3>View larger map</h3>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d201.8978076062881!2d84.12877668095945!3d27.653168382325006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399451ca43778a1b%3A0x9b8cf80bcd5c5df5!2sSyangja%20Sundar%20Hotel!5e1!3m2!1sen!2snp!4v1744538096747!5m2!1sen!2snp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+          
+          </div>
+          
+          <!-- Social/Info Section -->
+          <div class="social-section">
+            <h3>Connect With Us</h3>
+            <div class="social-icons">
+              <a href="#" class="social-icon">f</a>
+              <a href="#" class="social-icon">@</a>
+              <a href="#" class="social-icon">▼</a>
+              <a href="#" class="social-icon">©</a>
+            </div>
+            
+            <div class="business-hours">
+              <h4>Opening Hours</h4>
+              <div class="hours-item">
+                <span>Sunday-Friday:</span>
+                <span>8:00 AM - 8:00 PM</span>
+              </div>
+              <div class="hours-item">
+                <span>Saturday:</span>
+                <span>CLOSED</span>
+              </div>
+              <div class="address">
+                <p><i class="icon-location"></i> kawasoti-02,nawalpur, Nepal</p>
+                <p><i class="icon-phone"></i> +977 980000000X</p>
+                <p><i class="icon-email"></i> info@sundarikajajar.com</p>
+              </div>
+            </div>
+            
+         
+          </div>
+        </div>
+      </section>
+
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h3>About Syangja Sundar Khaja Ghar</h3>
+                <p>We serve authentic Nepali snacks and meals with a focus on quality and traditional flavors from Syangja region.</p>
+            </div>
+            <div class="footer-section links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section contact">
+                <h3>Contact Info</h3>
+                <p><i class="fas fa-map-marker-alt"></i> kawasoti-02, Nepal</p>
+                <p><i class="fas fa-phone"></i> +977 98XXXXXXX</p>
+                <p><i class="fas fa-envelope"></i> info@sundarkhajaghar.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 Syangja Sundar Khaja Ghar. All Rights Reserved.</p>
+        </div>
+    </div>
+</footer>
