@@ -9,10 +9,10 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     ({ className, variant = 'primary', size = 'md', ...props }, ref) => {
         const variants = {
-            primary: 'bg-primary text-white hover:bg-primary-light active:scale-95 shadow-lg border border-white/10',
-            secondary: 'bg-highlight text-black hover:bg-yellow-400 active:scale-95 shadow-lg',
-            outline: 'border-2 border-white/20 text-white hover:bg-white/10',
-            ghost: 'bg-transparent text-white/80 hover:bg-white/10 hover:text-white',
+            primary: 'bg-brand text-white hover:bg-brand/90 active:scale-95 shadow-lg shadow-brand/20 border border-brand/10',
+            secondary: 'bg-accent text-white hover:bg-accent/90 active:scale-95 shadow-lg shadow-accent/20',
+            outline: 'border-2 border-brand/20 text-brand hover:bg-brand/5 active:scale-95',
+            ghost: 'bg-transparent text-muted-foreground hover:bg-brand/5 hover:text-brand transition-colors',
         };
 
         const sizes = {

@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Inter, Outfit } from 'next/font/google';
+import { Inter, Instrument_Serif } from 'next/font/google';
 import './globals.css';
 import { Providers } from '@/components/Providers';
 
@@ -9,9 +9,10 @@ const inter = Inter({
   display: 'swap',
 });
 
-const outfit = Outfit({
+const instrumentSerif = Instrument_Serif({
+  weight: '400',
   subsets: ['latin'],
-  variable: '--font-outfit',
+  variable: '--font-instrument-serif',
   display: 'swap',
 });
 
@@ -28,7 +29,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.variable} ${outfit.variable} font-sans antialiased text-foreground bg-background`}>
+      <body className={`${inter.variable} ${instrumentSerif.variable} font-sans antialiased text-foreground bg-background`}>
         <Providers>
           {children}
         </Providers>

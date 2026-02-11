@@ -2,31 +2,37 @@
 
 @theme {
   --font-sans: var(--font-inter), system-ui, -apple-system, sans-serif;
-  --font-serif: var(--font-outfit), serif;
+  --font-serif: var(--font-instrument-serif), serif;
 
-  /* New Palette: Blue, Light Red, Yellow, White */
-  --color-primary: #1e40af;
-  /* Blue */
-  --color-primary-light: #3b82f6;
-  --color-accent: #ef4444;
-  /* Light Red */
-  --color-accent-light: #f87171;
-  --color-highlight: #facc15;
-  /* Yellow */
+  /* Refined Modern Palette: Deep Slate (Text), Royal Blue (Brand), Rose (Accent), Amber (Highlight) */
+  --color-primary: #0f172a;
+  --color-brand: #3b82f6;
+  --color-accent: #f43f5e;
+  --color-highlight: #f59e0b;
 
   --radius-xl: 1rem;
   --radius-2xl: 1.5rem;
+  --radius-3xl: 2.25rem;
 }
 
 :root {
-  /* Dark Theme Only */
+  --background: #fdfdfd;
+  --foreground: #0f172a;
+  --card: #ffffff;
+  --card-foreground: #0f172a;
+  --muted: #f8fafc;
+  --muted-foreground: #64748b;
+  --border: #e2e8f0;
+
+  color-scheme: light;
+}
+
+.dark {
   --background: #0f172a;
-  /* Deep Blue-Black */
-  --foreground: #ffffff;
-  /* White */
+  --foreground: #f8fafc;
   --card: #1e293b;
-  --card-foreground: #ffffff;
-  --muted: #334155;
+  --card-foreground: #f8fafc;
+  --muted: #1e293b;
   --muted-foreground: #94a3b8;
   --border: #334155;
 
@@ -42,9 +48,9 @@
     background-color: var(--background);
     color: var(--foreground);
     line-height: 1.6;
+    @apply antialiased;
   }
 
-  /* Senior Citizen Friendly Readability */
   h1,
   h2,
   h3,
@@ -53,17 +59,22 @@
   h6 {
     font-family: var(--font-serif);
     color: var(--foreground);
-    font-weight: 600;
+    line-height: 1.1;
+    font-weight: 500;
+  }
+
+  h1 {
+    @apply tracking-tight;
   }
 
   p {
-    font-size: 1.15rem;
-    /* Large font for senior citizens */
+    font-size: 1.125rem;
     color: var(--muted-foreground);
+    line-height: 1.7;
   }
 
   strong {
-    color: var(--color-highlight);
+    color: var(--color-brand);
   }
 }
 
@@ -73,7 +84,7 @@
   }
 }
 
-/* Smooth Transitions without heavy animation */
+/* Smooth Transitions */
 * {
   transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
 }
