@@ -44,8 +44,8 @@ export const AboutSection = () => {
 
                     <div className="space-y-8">
                         <div className="space-y-4">
-                            <span className="text-accent font-bold tracking-widest uppercase text-sm">Our Legacy</span>
-                            <h2 className="text-4xl md:text-5xl font-bold leading-tight">
+                            <span className="text-highlight font-bold tracking-widest uppercase text-sm">Our Legacy</span>
+                            <h2 className="text-4xl md:text-5xl font-bold leading-tight text-white">
                                 A Family Tradition of Excellence and Taste
                             </h2>
                             <p className="text-muted-foreground text-lg leading-relaxed">
@@ -65,16 +65,16 @@ export const AboutSection = () => {
                                     transition={{ delay: index * 0.1 }}
                                     className="flex items-center space-x-3"
                                 >
-                                    <div className="bg-accent/10 p-1.5 rounded-full">
-                                        <Check className="w-5 h-5 text-accent" />
+                                    <div className="bg-primary/20 p-1.5 rounded-full">
+                                        <Check className="w-5 h-5 text-highlight" />
                                     </div>
-                                    <span className="font-medium text-primary/80 dark:text-foreground/80">{item}</span>
+                                    <span className="font-medium text-white/80">{item}</span>
                                 </motion.div>
                             ))}
                         </div>
 
                         <div className="pt-4">
-                            <button className="text-primary font-bold border-b-2 border-accent pb-1 hover:text-accent transition-colors">
+                            <button className="text-white font-bold border-b-2 border-highlight pb-1 hover:text-highlight transition-colors">
                                 Read Our Full Story
                             </button>
                         </div>

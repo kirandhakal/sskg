@@ -59,19 +59,19 @@ export const RoomsSection = () => {
                                         alt={room.name}
                                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                                     />
-                                    <div className="absolute top-4 right-4 bg-background/90 backdrop-blur-sm px-3 py-1 rounded-full font-bold text-primary shadow-sm">
-                                        Rs. {room.price} <span className="text-xs font-normal text-muted-foreground">/ night</span>
+                                    <div className="absolute top-4 right-4 bg-primary px-3 py-1 rounded-full font-bold text-white shadow-lg border border-white/20">
+                                        Rs. {room.price} <span className="text-xs font-normal text-white/70">/ night</span>
                                     </div>
                                 </div>
                                 <CardContent className="p-6 flex-grow">
-                                    <h3 className="text-2xl font-bold mb-3">{room.name}</h3>
+                                    <h3 className="text-2xl font-bold mb-3 text-white">{room.name}</h3>
                                     <p className="text-muted-foreground mb-6 line-clamp-2">
                                         {room.description}
                                     </p>
                                     <div className="grid grid-cols-2 gap-4">
                                         {room.amenities.slice(0, 4).map((amenity) => (
-                                            <div key={amenity} className="flex items-center text-sm text-primary/70">
-                                                <div className="w-1.5 h-1.5 rounded-full bg-accent mr-2" />
+                                            <div key={amenity} className="flex items-center text-sm text-white/70">
+                                                <div className="w-1.5 h-1.5 rounded-full bg-highlight mr-2" />
                                                 {amenity}
                                             </div>
                                         ))}

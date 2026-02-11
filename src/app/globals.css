@@ -4,33 +4,33 @@
   --font-sans: var(--font-inter), system-ui, -apple-system, sans-serif;
   --font-serif: var(--font-outfit), serif;
 
-  --color-primary: #1a2e35;
-  --color-primary-light: #2c4a54;
-  --color-accent: #c5a059;
-  --color-accent-light: #d4b880;
+  /* New Palette: Blue, Light Red, Yellow, White */
+  --color-primary: #1e40af;
+  /* Blue */
+  --color-primary-light: #3b82f6;
+  --color-accent: #ef4444;
+  /* Light Red */
+  --color-accent-light: #f87171;
+  --color-highlight: #facc15;
+  /* Yellow */
 
   --radius-xl: 1rem;
   --radius-2xl: 1.5rem;
 }
 
 :root {
-  --background: #fdfdfd;
-  --foreground: #1a1a1a;
-  --card: #ffffff;
-  --card-foreground: #1a1a1a;
-  --muted: #f4f4f5;
-  --muted-foreground: #71717a;
-  --border: #e4e4e7;
-}
+  /* Dark Theme Only */
+  --background: #0f172a;
+  /* Deep Blue-Black */
+  --foreground: #ffffff;
+  /* White */
+  --card: #1e293b;
+  --card-foreground: #ffffff;
+  --muted: #334155;
+  --muted-foreground: #94a3b8;
+  --border: #334155;
 
-.dark {
-  --background: #09090b;
-  --foreground: #fafafa;
-  --card: #18181b;
-  --card-foreground: #fafafa;
-  --muted: #27272a;
-  --muted-foreground: #a1a1aa;
-  --border: #27272a;
+  color-scheme: dark;
 }
 
 @layer base {
@@ -52,19 +52,18 @@
   h5,
   h6 {
     font-family: var(--font-serif);
-    color: var(--color-primary);
+    color: var(--foreground);
     font-weight: 600;
   }
 
-  .dark h1,
-  .dark h2,
-  .dark h3 {
-    color: var(--foreground);
+  p {
+    font-size: 1.15rem;
+    /* Large font for senior citizens */
+    color: var(--muted-foreground);
   }
 
-  p {
-    font-size: 1.1rem;
-    /* Slightly larger base font */
+  strong {
+    color: var(--color-highlight);
   }
 }
 
@@ -74,9 +73,9 @@
   }
 }
 
-/* Smooth Transitions */
+/* Smooth Transitions without heavy animation */
 * {
-  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
 }
 
 /* Accessible hidden class */

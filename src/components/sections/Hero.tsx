@@ -25,17 +25,17 @@ export const Hero = () => {
                     transition={{ duration: 0.8, ease: 'easeOut' }}
                     className="max-w-3xl"
                 >
-                    <span className="inline-block px-4 py-1.5 rounded-full bg-accent/20 border border-accent/30 text-accent font-medium mb-6 backdrop-blur-sm">
+                    <span className="inline-block px-4 py-1.5 rounded-full bg-primary/20 border border-primary/30 text-white font-medium mb-6 backdrop-blur-sm">
                         Welcome to Syangja Sundar
                     </span>
                     <h1 className="text-5xl md:text-7xl font-bold mb-6 text-white leading-tight">
-                        Authentic Hospitality In The Heart of <span className="text-accent">Nawalpur</span>
+                        Authentic Hospitality In The Heart of <span className="text-highlight">Nawalpur</span>
                     </h1>
                     <p className="text-xl md:text-2xl text-white/80 mb-10 max-w-2xl leading-relaxed">
                         Experience the perfect blend of traditional Nepali warmth and modern luxury at our hotel and restaurant.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4">
-                        <Button size="lg" className="text-lg">Reserve Your Room</Button>
+                        <Button size="lg" className="text-lg bg-primary hover:bg-primary-light">Reserve Your Room</Button>
                         <Button variant="outline" size="lg" className="text-lg border-white text-white hover:bg-white/10">
                             Explore Our Menu
                         </Button>
