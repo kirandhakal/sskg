@@ -7,7 +7,7 @@ import { Button } from '../ui/Button';
 export const Hero = () => {
     return (
         <section className="relative min-h-[90vh] flex items-center pt-32 pb-24 overflow-hidden bg-background">
-            <div className="container-custom grid lg:grid-cols-2 gap-12 items-center relative z-10">
+            <div className="container-custom grid lg:grid-cols-2 gap-16 items-center relative z-10">
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}

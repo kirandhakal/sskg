@@ -30,7 +30,7 @@ export const Header = () => {
             className={cn(
                 'fixed top-4 left-1/2 -translate-x-1/2 z-50 transition-all duration-300 w-[95%] max-w-7xl rounded-2xl',
                 scrolled
-                    ? 'bg-background/80 backdrop-blur-xl border border-white/20 shadow-xl py-3'
+                    ? 'bg-background/80 backdrop-blur-xl border border-border shadow-xl py-3'
                     : 'bg-transparent py-5'
             )}
         >
