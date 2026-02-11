@@ -21,7 +21,7 @@ export const DiningSection = () => {
     };
 
     return (
-        <section id="dining" className="py-24 bg-white">
+        <section id="dining" className="py-24 bg-background">
             <div className="container-custom">
                 <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
                     <div className="max-w-2xl space-y-4">
@@ -78,7 +78,7 @@ export const DiningSection = () => {
                             whileInView={{ opacity: 1, scale: 1 }}
                             transition={{ delay: index * 0.05 }}
                         >
-                            <Card className="group h-full flex flex-col border-none shadow-lg shadow-black/5 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 rounded-3xl overflow-hidden bg-white">
+                            <Card className="group h-full flex flex-col border-none shadow-lg shadow-black/5 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 rounded-3xl overflow-hidden bg-card">
                                 <div className="relative h-56 overflow-hidden">
                                     <img
                                         src={item.image}

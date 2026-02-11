@@ -34,7 +34,7 @@ export const ContactSection = () => {
                                     transition={{ delay: index * 0.1 }}
                                     className="flex items-start space-x-5 group"
                                 >
-                                    <div className="bg-white p-4 rounded-2xl shadow-lg border border-border group-hover:border-brand group-hover:bg-brand transition-all duration-300">
+                                    <div className="bg-card p-4 rounded-2xl shadow-lg border border-border group-hover:border-brand group-hover:bg-brand transition-all duration-300">
                                         <item.icon className="w-6 h-6 text-brand group-hover:text-white" />
                                     </div>
                                     <div>
@@ -60,7 +60,7 @@ export const ContactSection = () => {
                     </div>
 
                     <div className="relative">
-                        <Card className="p-10 md:p-14 shadow-2xl relative z-10 border-none rounded-[2.5rem] bg-white">
+                        <Card className="p-10 md:p-14 shadow-2xl relative z-10 border-none rounded-[2.5rem] bg-card">
                             <h3 className="text-3xl font-black mb-8 text-primary">Send a Message</h3>
                             <form className="space-y-8" onSubmit={(e) => e.preventDefault()}>
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

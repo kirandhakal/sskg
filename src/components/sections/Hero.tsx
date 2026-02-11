@@ -6,7 +6,7 @@ import { Button } from '../ui/Button';
 
 export const Hero = () => {
     return (
-        <section className="relative min-h-[90vh] flex items-center pt-20 overflow-hidden bg-white">
+        <section className="relative min-h-[90vh] flex items-center pt-32 pb-24 overflow-hidden bg-background">
             <div className="container-custom grid lg:grid-cols-2 gap-12 items-center relative z-10">
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
@@ -69,14 +69,14 @@ export const Hero = () => {
                     <div className="absolute -top-10 -right-10 w-64 h-64 bg-brand/10 rounded-full blur-3xl -z-0" />
                     <div className="absolute -bottom-10 -left-10 w-64 h-64 bg-accent/10 rounded-full blur-3xl -z-0" />
 
-                    <div className="absolute top-20 -left-12 bg-white p-6 rounded-3xl shadow-2xl z-20 animate-bounce-slow">
+                    <div className="absolute top-20 -left-12 bg-card p-6 rounded-3xl shadow-2xl z-20 animate-bounce-slow">
                         <div className="bg-brand/10 p-3 rounded-2xl mb-3 flex items-center justify-center">
                             <span className="text-2xl">🏨</span>
                         </div>
                         <div className="text-sm font-bold text-primary">Premium Suites</div>
                     </div>
 
-                    <div className="absolute bottom-20 -right-12 bg-white p-6 rounded-3xl shadow-2xl z-20 animate-float">
+                    <div className="absolute bottom-20 -right-12 bg-card p-6 rounded-3xl shadow-2xl z-20 animate-float">
                         <div className="bg-highlight/10 p-3 rounded-2xl mb-3 flex items-center justify-center">
                             <span className="text-2xl">🍛</span>
                         </div>

@@ -15,7 +15,7 @@ export const AboutSection = () => {
     ];
 
     return (
-        <section id="about" className="py-24 bg-white overflow-hidden">
+        <section id="about" className="py-24 bg-background overflow-hidden text-foreground">
             <div className="container-custom">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
                     <motion.div
@@ -35,7 +35,7 @@ export const AboutSection = () => {
                         <motion.div
                             initial={{ opacity: 0, scale: 0.8 }}
                             whileInView={{ opacity: 1, scale: 1 }}
-                            className="absolute -bottom-10 -left-10 bg-white p-8 rounded-3xl shadow-2xl z-20 hidden md:block border border-border"
+                            className="absolute -bottom-10 -left-10 bg-card p-8 rounded-3xl shadow-2xl z-20 hidden md:block border border-border"
                         >
                             <span className="text-4xl font-black text-brand block mb-1">25+</span>
                             <span className="text-sm font-bold text-muted-foreground uppercase tracking-widest">Years of Hospitality</span>

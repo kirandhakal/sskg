@@ -55,7 +55,7 @@ export const RoomsSection = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ delay: index * 0.1 }}
                         >
-                            <Card className="h-full flex flex-col group border-none shadow-xl shadow-black/5 hover:shadow-2xl hover:shadow-brand/5 transition-all duration-500 rounded-3xl overflow-hidden bg-white">
+                            <Card className="h-full flex flex-col group border-none shadow-xl shadow-black/5 hover:shadow-2xl hover:shadow-brand/5 transition-all duration-500 rounded-3xl overflow-hidden bg-card">
                                 <div className="relative h-72 overflow-hidden">
                                     <img
                                         src={room.image}
