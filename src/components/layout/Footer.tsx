@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export const Footer = () => {
     return (
-        <footer className="bg-primary pt-24 pb-12">
+        <footer className="bg-primary text-slate-900 dark:text-white pt-24 pb-12">
             <div className="container-custom">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-20">
                     {/* Brand */}
@@ -77,8 +77,8 @@ export const Footer = () => {
                         © {new Date().getFullYear()} Syangja Sundar Hotel & Khaja Ghar. Designed with heart.
                     </p>
                     <div className="flex space-x-8 text-sm font-medium">
-                        <a href="#" className="text-slate-600 dark:text-white/60 hover:text-slate-800 dark:hover:text-white transition-colors">Privacy Policy</a>
-                        <a href="#" className="text-slate-600 dark:text-white/60 hover:text-slate-800 dark:hover:text-white transition-colors">Terms of Service</a>
+                        <a href="/privacy" target="_blank" rel="noopener noreferrer" className="text-slate-600 dark:text-white/60 hover:text-slate-800 dark:hover:text-white transition-colors">Privacy Policy</a>
+                        <a href="/terms" target="_blank" rel="noopener noreferrer" className="text-slate-600 dark:text-white/60 hover:text-slate-800 dark:hover:text-white transition-colors">Terms of Service</a>
                     </div>
                 </div>
             </div>
