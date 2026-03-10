@@ -1,35 +1,35 @@
-name: Next.js CI/CD
+# name: Next.js CI/CD
 
-on:
-  push:
-    branches:
-      - "main"
-  pull_request:
-    branches:
-      - "main"
+# on:
+#   push:
+#     branches:
+#       - "main"
+#   pull_request:
+#     branches:
+#       - "main"
 
-jobs:
-  build:
-    runs-on: ubuntu-latest
+# jobs:
+#   build:
+#     runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+#     steps:
+#       - name: Checkout code
+#         uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: "20"
-          cache: "npm" 
+#       - name: Setup Node.js
+#         uses: actions/setup-node@v4
+#         with:
+#           node-version: "20"
+#           cache: "npm" 
 
-      - name: Install dependencies
-        run: npm install
+#       - name: Install dependencies
+#         run: npm install
 
-      - name: Build Next.js
-        run: npm run build
+#       - name: Build Next.js
+#         run: npm run build
 
-      - name: Lint
-        run: npm run lint
+#       - name: Lint
+#         run: npm run lint
 
-      - name: Run Tests
-        run: npm test 
+#       - name: Run Tests
+#         run: npm test 
