@@ -5,14 +5,16 @@ import Link from 'next/link';
 import { Button } from '../ui/Button';
 import heroData from '@/data/sections/hero.json';
 
+const smoothTransition = { duration: 0.9, ease: [0.22, 1, 0.36, 1] as const };
+
 export const Hero = () => {
     return (
         <section className="relative min-h-[90vh] flex items-center pt-32 pb-24 overflow-hidden bg-background">
             <div className="container-custom grid lg:grid-cols-2 gap-16 items-center relative z-10">
                 <motion.div
-                    initial={{ opacity: 0, y: 30 }}
+                    initial={{ opacity: 0, y: 24 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, ease: 'easeOut' }}
+                    transition={smoothTransition}
                     className="max-w-2xl"
                 >
                     <span className="inline-block px-4 py-1.5 rounded-full bg-brand/10 text-brand font-semibold text-sm mb-6 uppercase tracking-wider">
@@ -51,9 +53,9 @@ export const Hero = () => {
                 </motion.div>
 
                 <motion.div
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 1, delay: 0.2 }}
+                    initial={{ opacity: 0, scale: 0.95, y: 20 }}
+                    animate={{ opacity: 1, scale: 1, y: 0 }}
+                    transition={{ duration: 1.0, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
                     className="relative hidden lg:block"
                 >
                     <div className="relative z-10 rounded-[4rem] overflow-hidden shadow-[0_50px_100px_-20px_rgba(0,0,0,0.15)] aspect-[4/5]">
@@ -68,21 +70,29 @@ export const Hero = () => {
                     <div className="absolute -bottom-10 -left-10 w-64 h-64 bg-accent/10 rounded-full blur-3xl -z-0" />
 
                     {heroData.floatingCards[0] && (
-                        <div className="absolute top-20 -left-12 bg-card p-6 rounded-3xl shadow-2xl z-20 animate-bounce-slow">
+                        <motion.div
+                            animate={{ y: [0, -10, 0] }}
+                            transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
+                            className="absolute top-20 -left-12 bg-card border border-border/60 p-6 rounded-3xl shadow-2xl z-20"
+                        >
                             <div className="bg-brand/10 p-3 rounded-2xl mb-3 flex items-center justify-center">
                                 <span className="text-2xl">{heroData.floatingCards[0].icon}</span>
                             </div>
-                            <div className="text-sm font-bold text-primary">{heroData.floatingCards[0].label}</div>
-                        </div>
+                            <div className="text-sm font-bold text-foreground">{heroData.floatingCards[0].label}</div>
+                        </motion.div>
                     )}
 
                     {heroData.floatingCards[1] && (
-                        <div className="absolute bottom-20 -right-12 bg-card p-6 rounded-3xl shadow-2xl z-20 animate-float">
+                        <motion.div
+                            animate={{ y: [0, 10, 0] }}
+                            transition={{ duration: 5.5, repeat: Infinity, ease: 'easeInOut', delay: 0.5 }}
+                            className="absolute bottom-20 -right-12 bg-card border border-border/60 p-6 rounded-3xl shadow-2xl z-20"
+                        >
                             <div className="bg-highlight/10 p-3 rounded-2xl mb-3 flex items-center justify-center">
                                 <span className="text-2xl">{heroData.floatingCards[1].icon}</span>
                             </div>
-                            <div className="text-sm font-bold text-primary">{heroData.floatingCards[1].label}</div>
-                        </div>
+                            <div className="text-sm font-bold text-foreground">{heroData.floatingCards[1].label}</div>
+                        </motion.div>
                     )}
                 </motion.div>
             </div>
