@@ -2,18 +2,11 @@
 
 import { motion } from 'framer-motion';
 import { Check } from 'lucide-react';
+import Link from 'next/link';
 import { Button } from '../ui/Button';
+import aboutData from '@/data/sections/about.json';
 
 export const AboutSection = () => {
-    const highlights = [
-        '25+ Years of Tradition',
-        'Authentic Syangja Recipes',
-        'Modern Luxury Amenities',
-        'Prime Location in Kawasoti',
-        'Eco-friendly Practices',
-        'Award-winning Service'
-    ];
-
     return (
         <section id="about" className="py-24 bg-background overflow-hidden text-foreground">
             <div className="container-custom">
@@ -25,8 +18,8 @@ export const AboutSection = () => {
                     >
                         <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl">
                             <img
-                                src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                                alt="Hotel exterior"
+                                src={aboutData.image.src}
+                                alt={aboutData.image.alt}
                                 className="w-full h-[600px] object-cover"
                             />
                         </div>
@@ -37,31 +30,30 @@ export const AboutSection = () => {
                             whileInView={{ opacity: 1, scale: 1 }}
                             className="absolute -bottom-10 -left-10 bg-card p-8 rounded-3xl shadow-2xl z-20 hidden md:block border border-border"
                         >
-                            <span className="text-4xl font-black text-brand block mb-1">25+</span>
-                            <span className="text-sm font-bold text-muted-foreground uppercase tracking-widest">Years of Hospitality</span>
+                            <span className="text-4xl font-black text-brand block mb-1">{aboutData.experienceBadge.value}</span>
+                            <span className="text-sm font-bold text-muted-foreground uppercase tracking-widest">{aboutData.experienceBadge.label}</span>
                         </motion.div>
                     </motion.div>
 
                     <div className="space-y-10">
                         <div className="space-y-6">
-                            <span className="text-brand font-black tracking-widest uppercase text-xs bg-brand/5 px-4 py-2 rounded-full">OUR STORY</span>
+                            <span className="text-brand font-black tracking-widest uppercase text-xs bg-brand/5 px-4 py-2 rounded-full">{aboutData.badge}</span>
                             <motion.h2
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 className="text-4xl md:text-6xl font-black text-primary leading-tight"
                             >
-                                Family Tradition, <span className="text-brand">Global</span> Standards
+                                {aboutData.title.prefix} <span className="text-brand">{aboutData.title.highlight}</span> {aboutData.title.suffix}
                             </motion.h2>
-                            <p className="text-muted-foreground text-xl leading-relaxed">
-                                Founded in the heart of Nawalpur, Syangja Sundar has grown from a humble eatery to a cornerstone of hospitality in the region.
-                            </p>
-                            <p className="text-muted-foreground text-lg leading-relaxed">
-                                We believe in the power of authentic connection—whether it's through a perfectly brewed cup of tea or a restful night in our executive suites.
-                            </p>
+                            {aboutData.paragraphs.map((para, idx) => (
+                                <p key={idx} className={`text-muted-foreground leading-relaxed ${idx === 0 ? 'text-xl' : 'text-lg'}`}>
+                                    {para}
+                                </p>
+                            ))}
                         </div>
 
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                            {highlights.map((item, index) => (
+                            {aboutData.highlights.map((item, index) => (
                                 <motion.div
                                     key={index}
                                     initial={{ opacity: 0, y: 10 }}
@@ -78,9 +70,11 @@ export const AboutSection = () => {
                         </div>
 
                         <div className="pt-6">
-                            <Button size="lg" className="rounded-2xl px-10 py-6 h-auto font-black shadow-xl shadow-brand/10 transition-all hover:scale-105">
-                                Read Our Full Story
-                            </Button>
+                            <Link href="/about">
+                                <Button size="lg" className="rounded-2xl px-10 py-6 h-auto font-black shadow-xl shadow-brand/10 transition-all hover:scale-105">
+                                    {aboutData.cta.text}
+                                </Button>
+                            </Link>
                         </div>
                     </div>
                 </div>

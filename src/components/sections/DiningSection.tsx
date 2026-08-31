@@ -2,7 +2,7 @@
 
 import * as React from 'react';
 import { motion } from 'framer-motion';
-import { menuItems, categories } from '@/data/mock-data';
+import diningData from '@/data/sections/dining.json';
 import { Card, CardContent } from '../ui/Card';
 import { Button } from '../ui/Button';
 import { ShoppingBag, Star } from 'lucide-react';
@@ -13,8 +13,8 @@ export const DiningSection = () => {
     const [cartCount, setCartCount] = React.useState(0);
 
     const filteredItems = activeCategory === 'All'
-        ? menuItems
-        : menuItems.filter(item => item.category === activeCategory);
+        ? diningData.items
+        : diningData.items.filter(item => item.category === activeCategory);
 
     const addToCart = () => {
         setCartCount(prev => prev + 1);
@@ -25,23 +25,25 @@ export const DiningSection = () => {
             <div className="container-custom">
                 <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
                     <div className="max-w-2xl space-y-4">
-                        <span className="text-brand font-black tracking-widest uppercase text-xs bg-brand/5 px-4 py-2 rounded-full">AUTHENTIC FLAVORS</span>
+                        <span className="text-brand font-black tracking-widest uppercase text-xs bg-brand/5 px-4 py-2 rounded-full">
+                            {diningData.badge}
+                        </span>
                         <motion.h2
                             initial={{ opacity: 0, x: -20 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             className="text-4xl md:text-6xl font-black text-primary leading-tight"
                         >
-                            The Taste of <span className="text-brand">Syangja</span>
+                            {diningData.title.prefix} <span className="text-brand">{diningData.title.highlight}</span>
                         </motion.h2>
                         <p className="text-muted-foreground text-lg leading-relaxed">
-                            Our kitchen is a celebration of heritage. Every dish is a journey through the traditional recipes passed down through generations.
+                            {diningData.description}
                         </p>
                     </div>
 
                     <div className="relative group">
                         <Button variant="outline" className="rounded-2xl flex items-center gap-2 border-border hover:border-brand hover:text-brand transition-all bg-muted/30 px-8 py-6 h-auto">
                             <ShoppingBag className="w-5 h-5" />
-                            <span className="font-bold">My Order</span>
+                            <span className="font-bold">{diningData.cartButtonText}</span>
                             {cartCount > 0 && (
                                 <span className="absolute -top-3 -right-3 bg-accent text-white text-[10px] font-black w-7 h-7 rounded-full flex items-center justify-center border-4 border-white shadow-xl animate-bounce-slow">
                                     {cartCount}
@@ -52,7 +54,7 @@ export const DiningSection = () => {
                 </div>
 
                 <div className="flex flex-wrap gap-3 mb-12">
-                    {categories.menu.map((cat) => (
+                    {diningData.categories.map((cat) => (
                         <Button
                             key={cat}
                             variant={activeCategory === cat ? 'primary' : 'ghost'}
@@ -85,10 +87,12 @@ export const DiningSection = () => {
                                         alt={item.name}
                                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                                     />
-                                    <div className="absolute top-4 left-4 bg-accent text-white text-[9px] font-black px-3 py-1 rounded-lg flex items-center gap-1.5 shadow-xl tracking-widest uppercase">
-                                        <Star className="w-3 h-3 fill-current" />
-                                        Signature
-                                    </div>
+                                    {item.tag && (
+                                        <div className="absolute top-4 left-4 bg-accent text-white text-[9px] font-black px-3 py-1 rounded-lg flex items-center gap-1.5 shadow-xl tracking-widest uppercase">
+                                            <Star className="w-3 h-3 fill-current" />
+                                            {item.tag}
+                                        </div>
+                                    )}
                                 </div>
                                 <CardContent className="p-6 flex-grow flex flex-col justify-between">
                                     <div>
@@ -106,7 +110,7 @@ export const DiningSection = () => {
                                         className="w-full bg-brand/5 hover:bg-brand text-brand hover:text-white rounded-xl py-3 h-auto font-black transition-all border-none"
                                         onClick={addToCart}
                                     >
-                                        Add to Order
+                                        {diningData.addToCartText}
                                     </Button>
                                 </CardContent>
                             </Card>

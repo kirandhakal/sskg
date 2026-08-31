@@ -1,0 +1,45 @@
+{
+  "badge": "Luxury Stay & Traditional Taste",
+  "title": {
+    "prefix": "Experience Heartfelt",
+    "highlight": "Nepali",
+    "suffix": "Warmth & Hospitality"
+  },
+  "description": "From our legendary Syangjali recipes to our serene suites, discover a destination where every guest is treated like family.",
+  "primaryCta": {
+    "text": "Book Your Stay",
+    "href": "/#rooms"
+  },
+  "secondaryCta": {
+    "text": "View Our Menu",
+    "href": "/dining"
+  },
+  "stats": [
+    {
+      "value": "25+",
+      "label": "Years of Excellence"
+    },
+    {
+      "value": "15k+",
+      "label": "Happy Guests"
+    },
+    {
+      "value": "4.8/5",
+      "label": "Average Rating"
+    }
+  ],
+  "image": {
+    "src": "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    "alt": "Luxury Hotel Room"
+  },
+  "floatingCards": [
+    {
+      "icon": "🏨",
+      "label": "Premium Suites"
+    },
+    {
+      "icon": "🍛",
+      "label": "Authentic Food"
+    }
+  ]
+}

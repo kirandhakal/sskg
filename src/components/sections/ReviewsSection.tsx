@@ -1,46 +1,23 @@
- 'use client';
+'use client';
 
 import * as React from 'react';
 import { motion } from 'framer-motion';
 import { Star } from 'lucide-react';
 import { Card } from '@/components/ui/Card';
 import { textPrimary, textMuted } from '@/components/ui/Colors';
-
-const reviews = [
-  {
-    id: 'r1',
-    name: 'Anita Sharma',
-    location: 'Kathmandu, NP',
-    rating: 5,
-    text: 'Absolutely loved our stay — warm staff, great food and a charming room. Highly recommended!',
-  },
-  {
-    id: 'r2',
-    name: 'Michael Lee',
-    location: 'Sydney, AU',
-    rating: 4,
-    text: "Beautiful hotel with traditional touches. The breakfast was exceptional and staff helpful.",
-  },
-  {
-    id: 'r3',
-    name: 'Sita K.',
-    location: 'Pokhara, NP',
-    rating: 5,
-    text: 'Great value and authentic food — the momo was memorable. Will visit again.',
-  },
-];
+import reviewsData from '@/data/sections/reviews.json';
 
 export const ReviewsSection: React.FC = () => {
   return (
     <section id="reviews" className="py-24 bg-transparent">
       <div className="container-custom">
         <div className="max-w-5xl mx-auto text-center mb-12">
-          <h2 className={`${textPrimary} text-3xl font-semibold`}>Guest Reviews</h2>
-          <p className={`${textMuted} mt-2`}>What our guests are saying about Syangja Sundar Hotel & Khaja Ghar.</p>
+          <h2 className={`${textPrimary} text-3xl font-semibold`}>{reviewsData.title}</h2>
+          <p className={`${textMuted} mt-2`}>{reviewsData.subtitle}</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {reviews.map((r, idx) => (
+          {reviewsData.reviews.map((r, idx) => (
             <motion.div
               key={r.id}
               initial={{ opacity: 0, y: 12 }}

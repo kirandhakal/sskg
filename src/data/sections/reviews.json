@@ -1,0 +1,27 @@
+{
+  "title": "Guest Reviews",
+  "subtitle": "What our guests are saying about Syangja Sundar Hotel & Khaja Ghar.",
+  "reviews": [
+    {
+      "id": "r1",
+      "name": "Anita Sharma",
+      "location": "Kathmandu, NP",
+      "rating": 5,
+      "text": "Absolutely loved our stay — warm staff, great food and a charming room. Highly recommended!"
+    },
+    {
+      "id": "r2",
+      "name": "Michael Lee",
+      "location": "Sydney, AU",
+      "rating": 4,
+      "text": "Beautiful hotel with traditional touches. The breakfast was exceptional and staff helpful."
+    },
+    {
+      "id": "r3",
+      "name": "Sita K.",
+      "location": "Pokhara, NP",
+      "rating": 5,
+      "text": "Great value and authentic food — the momo was memorable. Will visit again."
+    }
+  ]
+}

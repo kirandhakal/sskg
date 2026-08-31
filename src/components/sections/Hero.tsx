@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { Button } from '../ui/Button';
+import heroData from '@/data/sections/hero.json';
 
 export const Hero = () => {
     return (
@@ -15,40 +16,37 @@ export const Hero = () => {
                     className="max-w-2xl"
                 >
                     <span className="inline-block px-4 py-1.5 rounded-full bg-brand/10 text-brand font-semibold text-sm mb-6 uppercase tracking-wider">
-                        Luxury Stay & Traditional Taste
+                        {heroData.badge}
                     </span>
                     <h1 className="text-5xl md:text-7xl font-serif text-primary leading-[1.05] mb-8">
-                        Experience Heartfelt <span className="text-brand">Nepali</span> <br className="hidden md:block" /> Warmth & Hospitality
+                        {heroData.title.prefix} <span className="text-brand">{heroData.title.highlight}</span> <br className="hidden md:block" /> {heroData.title.suffix}
                     </h1>
                     <p className="text-xl text-muted-foreground mb-10 leading-relaxed max-w-lg">
-                        From our legendary Syangjali recipes to our serene suites, discover a destination where every guest is treated like family.
+                        {heroData.description}
                     </p>
                     <div className="flex flex-col sm:flex-row gap-5">
-                        <Button size="lg" className="rounded-full px-10 py-7 text-lg shadow-2xl shadow-brand/20">
-                            Book Your Stay
-                        </Button>
-                        <Link href="/dining">
+                        <Link href={heroData.primaryCta.href}>
+                            <Button size="lg" className="rounded-full px-10 py-7 text-lg shadow-2xl shadow-brand/20">
+                                {heroData.primaryCta.text}
+                            </Button>
+                        </Link>
+                        <Link href={heroData.secondaryCta.href}>
                             <Button variant="outline" size="lg" className="rounded-full px-10 py-7 text-lg">
-                                View Our Menu
+                                {heroData.secondaryCta.text}
                             </Button>
                         </Link>
                     </div>
 
                     <div className="mt-16 flex items-center space-x-8">
-                        <div>
-                            <div className="text-3xl font-serif text-primary">25+</div>
-                            <div className="text-sm text-muted-foreground font-medium">Years of Excellence</div>
-                        </div>
-                        <div className="w-px h-10 bg-border" />
-                        <div>
-                            <div className="text-3xl font-serif text-primary">15k+</div>
-                            <div className="text-sm text-muted-foreground font-medium">Happy Guests</div>
-                        </div>
-                        <div className="w-px h-10 bg-border" />
-                        <div>
-                            <div className="text-3xl font-serif text-primary">4.8/5</div>
-                            <div className="text-sm text-muted-foreground font-medium">Average Rating</div>
-                        </div>
+                        {heroData.stats.map((stat, idx) => (
+                            <div key={idx} className="flex items-center space-x-8">
+                                <div>
+                                    <div className="text-3xl font-serif text-primary">{stat.value}</div>
+                                    <div className="text-sm text-muted-foreground font-medium">{stat.label}</div>
+                                </div>
+                                {idx < heroData.stats.length - 1 && <div className="w-px h-10 bg-border" />}
+                            </div>
+                        ))}
                     </div>
                 </motion.div>
 
@@ -60,8 +58,8 @@ export const Hero = () => {
                 >
                     <div className="relative z-10 rounded-[4rem] overflow-hidden shadow-[0_50px_100px_-20px_rgba(0,0,0,0.15)] aspect-[4/5]">
                         <img
-                            src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
-                            alt="Luxury Hotel Room"
+                            src={heroData.image.src}
+                            alt={heroData.image.alt}
                             className="w-full h-full object-cover"
                         />
                     </div>
@@ -69,19 +67,23 @@ export const Hero = () => {
                     <div className="absolute -top-10 -right-10 w-64 h-64 bg-brand/10 rounded-full blur-3xl -z-0" />
                     <div className="absolute -bottom-10 -left-10 w-64 h-64 bg-accent/10 rounded-full blur-3xl -z-0" />
 
-                    <div className="absolute top-20 -left-12 bg-card p-6 rounded-3xl shadow-2xl z-20 animate-bounce-slow">
-                        <div className="bg-brand/10 p-3 rounded-2xl mb-3 flex items-center justify-center">
-                            <span className="text-2xl">🏨</span>
+                    {heroData.floatingCards[0] && (
+                        <div className="absolute top-20 -left-12 bg-card p-6 rounded-3xl shadow-2xl z-20 animate-bounce-slow">
+                            <div className="bg-brand/10 p-3 rounded-2xl mb-3 flex items-center justify-center">
+                                <span className="text-2xl">{heroData.floatingCards[0].icon}</span>
+                            </div>
+                            <div className="text-sm font-bold text-primary">{heroData.floatingCards[0].label}</div>
                         </div>
-                        <div className="text-sm font-bold text-primary">Premium Suites</div>
-                    </div>
+                    )}
 
-                    <div className="absolute bottom-20 -right-12 bg-card p-6 rounded-3xl shadow-2xl z-20 animate-float">
-                        <div className="bg-highlight/10 p-3 rounded-2xl mb-3 flex items-center justify-center">
-                            <span className="text-2xl">🍛</span>
+                    {heroData.floatingCards[1] && (
+                        <div className="absolute bottom-20 -right-12 bg-card p-6 rounded-3xl shadow-2xl z-20 animate-float">
+                            <div className="bg-highlight/10 p-3 rounded-2xl mb-3 flex items-center justify-center">
+                                <span className="text-2xl">{heroData.floatingCards[1].icon}</span>
+                            </div>
+                            <div className="text-sm font-bold text-primary">{heroData.floatingCards[1].label}</div>
                         </div>
-                        <div className="text-sm font-bold text-primary">Authentic Food</div>
-                    </div>
+                    )}
                 </motion.div>
             </div>
 

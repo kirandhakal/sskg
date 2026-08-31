@@ -1,0 +1,49 @@
+{
+  "badge": "AUTHENTIC FLAVORS",
+  "title": {
+    "prefix": "The Taste of",
+    "highlight": "Syangja"
+  },
+  "description": "Our kitchen is a celebration of heritage. Every dish is a journey through the traditional recipes passed down through generations.",
+  "cartButtonText": "My Order",
+  "addToCartText": "Add to Order",
+  "categories": ["All", "Momo", "Thali", "Newari", "Snacks", "Beverages"],
+  "items": [
+    {
+      "id": "m1",
+      "name": "Chicken Momo",
+      "category": "Momo",
+      "price": 160,
+      "description": "Steamed dumplings filled with spiced minced chicken, served with traditional tomato chutney.",
+      "image": "https://images.unsplash.com/photo-1625220194771-7ebdea0b70b9?auto=format&fit=crop&q=80&w=800",
+      "tag": "Signature"
+    },
+    {
+      "id": "m2",
+      "name": "Veg Momo",
+      "category": "Momo",
+      "price": 130,
+      "description": "Steamed dumplings filled with fresh mixed vegetables and local spices.",
+      "image": "https://images.unsplash.com/photo-1534422298391-e4f8c170db76?auto=format&fit=crop&q=80&w=800",
+      "tag": "Signature"
+    },
+    {
+      "id": "m3",
+      "name": "Nepali Thali Set",
+      "category": "Thali",
+      "price": 350,
+      "description": "Authentic Nepali meal with rice, lentil soup, seasonal vegetables, pickle, and meat curry.",
+      "image": "https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&q=80&w=800",
+      "tag": "Signature"
+    },
+    {
+      "id": "m4",
+      "name": "Newari Samay Baji",
+      "category": "Newari",
+      "price": 450,
+      "description": "Traditional Newari platter with beaten rice, choila, bara, and various side dishes.",
+      "image": "https://images.unsplash.com/photo-1634827011986-e0e67611ef4f?auto=format&fit=crop&q=80&w=800",
+      "tag": "Signature"
+    }
+  ]
+}

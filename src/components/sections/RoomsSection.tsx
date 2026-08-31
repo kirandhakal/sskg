@@ -2,7 +2,7 @@
 
 import * as React from 'react';
 import { motion } from 'framer-motion';
-import { rooms, categories } from '@/data/mock-data';
+import roomsData from '@/data/sections/rooms.json';
 import { Card, CardContent, CardFooter } from '../ui/Card';
 import { Button } from '../ui/Button';
 import { cn } from '@/lib/utils';
@@ -11,8 +11,8 @@ export const RoomsSection = () => {
     const [activeCategory, setActiveCategory] = React.useState('All');
 
     const filteredRooms = activeCategory === 'All'
-        ? rooms
-        : rooms.filter(room => room.category === activeCategory);
+        ? roomsData.rooms
+        : roomsData.rooms.filter(room => room.category === activeCategory);
 
     return (
         <section id="rooms" className="py-24 bg-muted/50">
@@ -23,14 +23,14 @@ export const RoomsSection = () => {
                         whileInView={{ opacity: 1, scale: 1 }}
                         className="text-4xl md:text-5xl font-black text-primary"
                     >
-                        Exclusive Living
+                        {roomsData.title}
                     </motion.h2>
                     <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-                        Immerse yourself in comfort with our premium accommodations, where every detail is crafted for your peaceful stay.
+                        {roomsData.description}
                     </p>
 
                     <div className="flex flex-wrap justify-center gap-3 pt-6">
-                        {categories.rooms.map((cat) => (
+                        {roomsData.categories.map((cat) => (
                             <Button
                                 key={cat}
                                 variant={activeCategory === cat ? 'primary' : 'outline'}
@@ -64,7 +64,7 @@ export const RoomsSection = () => {
                                     />
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                                     <div className="absolute top-6 right-6 bg-white px-4 py-2 rounded-2xl font-black text-brand shadow-xl z-10">
-                                        Rs. {room.price} <span className="text-xs font-medium text-muted-foreground block text-right mt-[-4px]">per night</span>
+                                        Rs. {room.price} <span className="text-xs font-medium text-muted-foreground block text-right mt-[-4px]">{roomsData.priceUnit}</span>
                                     </div>
                                 </div>
                                 <CardContent className="p-8 flex-grow">
@@ -84,7 +84,7 @@ export const RoomsSection = () => {
                                 </CardContent>
                                 <CardFooter className="p-8 pt-0">
                                     <Button className="w-full bg-primary hover:bg-brand text-white rounded-2xl py-6 h-auto font-bold transition-all" variant="primary">
-                                        Book This Room
+                                        {roomsData.bookButtonText}
                                     </Button>
                                 </CardFooter>
                             </Card>
