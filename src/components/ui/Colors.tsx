@@ -11,7 +11,7 @@ export const PrimaryText: React.FC<React.PropsWithChildren<{ className?: string 
   <span className={`${textPrimary} ${className}`.trim()}>{children}</span>
 );
 
-export const BodyText: React.FC<React.PropsWithChildren<{ as?: any; className?: string }>> = ({ as: Comp = 'p', children, className = '' }) => (
+export const BodyText: React.FC<React.PropsWithChildren<{ as?: React.ElementType; className?: string }>> = ({ as: Comp = 'p', children, className = '' }) => (
   <Comp className={`${textMuted} ${className}`.trim()}>{children}</Comp>
 );
 
@@ -19,7 +19,7 @@ export const PrimaryBg: React.FC<React.PropsWithChildren<{ className?: string }>
   <div className={`${bgPrimary} ${className}`.trim()}>{children}</div>
 );
 
-export default {
+const Colors = {
   textPrimary,
   bgPrimary,
   textMuted,
@@ -29,3 +29,5 @@ export default {
   BodyText,
   PrimaryBg,
 };
+
+export default Colors;

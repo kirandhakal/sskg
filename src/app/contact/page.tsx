@@ -10,7 +10,7 @@ export default function ContactPage() {
                 <div className="container-custom">
                     <h1 className="text-4xl md:text-6xl font-bold mb-4">Contact Us</h1>
                     <p className="text-xl text-muted-foreground max-w-2xl">
-                        We're here to assist you. Reach out for reservations, inquiries, or just to say Namaste.
+                        We&apos;re here to assist you. Reach out for reservations, inquiries, or just to say Namaste.
                     </p>
                 </div>
             </div>

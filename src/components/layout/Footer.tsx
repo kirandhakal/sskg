@@ -1,4 +1,4 @@
-import { Hotel, Facebook, Instagram, Twitter, MapPin, Phone, Mail } from 'lucide-react';
+import { Facebook, Instagram, Twitter, MapPin, Phone, Mail } from 'lucide-react';
 import Link from 'next/link';
 
 export const Footer = () => {

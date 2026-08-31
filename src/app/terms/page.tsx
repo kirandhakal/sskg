@@ -31,7 +31,7 @@ export default function TermsPage() {
 
           <section className="mb-6">
             <h2 className={`${textPrimary} text-2xl font-medium mb-3`}>Disclaimers &amp; Liability</h2>
-            <p className={`${textMuted} leading-relaxed`}>Services are provided "as is". We disclaim warranties to the fullest extent permitted by law. Liability is limited as allowed by applicable law.</p>
+            <p className={`${textMuted} leading-relaxed`}>Services are provided &quot;as is&quot;. We disclaim warranties to the fullest extent permitted by law. Liability is limited as allowed by applicable law.</p>
           </section>
 
           <section className="mb-6">
