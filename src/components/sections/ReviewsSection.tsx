@@ -6,6 +6,8 @@ import { Star } from 'lucide-react';
 import { Card } from '@/components/ui/Card';
 import reviewsData from '@/data/sections/reviews.json';
 
+const smoothEase = [0.22, 1, 0.36, 1] as const;
+
 export const ReviewsSection: React.FC = () => {
   return (
     <section id="reviews" className="py-24 bg-background">
@@ -19,11 +21,12 @@ export const ReviewsSection: React.FC = () => {
           {reviewsData.reviews.map((r, idx) => (
             <motion.div
               key={r.id}
-              initial={{ opacity: 0, y: 12 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: idx * 0.12 }}
+              viewport={{ once: true, amount: 0.15 }}
+              transition={{ duration: 0.7, delay: idx * 0.1, ease: smoothEase }}
             >
-              <Card className="h-full bg-card border-border shadow-lg">
+              <Card className="h-full bg-card border-border shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-500">
                 <div className="p-6 flex flex-col h-full">
                   <div className="flex items-center mb-4">
                     <div className="w-12 h-12 rounded-full bg-brand/10 flex items-center justify-center mr-3 shrink-0">

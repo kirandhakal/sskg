@@ -7,6 +7,8 @@ import { Card, CardContent, CardFooter } from '../ui/Card';
 import { Button } from '../ui/Button';
 import { cn } from '@/lib/utils';
 
+const smoothEase = [0.22, 1, 0.36, 1] as const;
+
 export const RoomsSection = () => {
     const [activeCategory, setActiveCategory] = React.useState('All');
 
@@ -19,8 +21,10 @@ export const RoomsSection = () => {
             <div className="container-custom">
                 <div className="text-center mb-16 space-y-4">
                     <motion.h2
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true, amount: 0.2 }}
+                        transition={{ duration: 0.8, ease: smoothEase }}
                         className="text-4xl md:text-5xl font-black text-foreground"
                     >
                         {roomsData.title}
@@ -37,7 +41,7 @@ export const RoomsSection = () => {
                                 size="sm"
                                 onClick={() => setActiveCategory(cat)}
                                 className={cn(
-                                    "rounded-full px-8 font-semibold",
+                                    "rounded-full px-8 font-semibold transition-all duration-300",
                                     activeCategory === cat
                                         ? "bg-brand text-white border-transparent shadow-lg shadow-brand/20"
                                         : "bg-card border-border text-foreground hover:border-brand hover:text-brand"
@@ -53,9 +57,10 @@ export const RoomsSection = () => {
                     {filteredRooms.map((room, index) => (
                         <motion.div
                             key={room.id}
-                            initial={{ opacity: 0, y: 30 }}
+                            initial={{ opacity: 0, y: 24 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ delay: index * 0.1 }}
+                            viewport={{ once: true, amount: 0.15 }}
+                            transition={{ duration: 0.75, delay: index * 0.1, ease: smoothEase }}
                         >
                             <Card className="h-full flex flex-col group border-border shadow-xl hover:shadow-2xl hover:shadow-brand/5 transition-all duration-500 rounded-3xl overflow-hidden bg-card">
                                 <div className="relative h-72 overflow-hidden">

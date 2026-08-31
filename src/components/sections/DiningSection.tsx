@@ -8,6 +8,8 @@ import { Button } from '../ui/Button';
 import { ShoppingBag, Star } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
+const smoothEase = [0.22, 1, 0.36, 1] as const;
+
 export const DiningSection = () => {
     const [activeCategory, setActiveCategory] = React.useState('All');
     const [cartCount, setCartCount] = React.useState(0);
@@ -29,9 +31,11 @@ export const DiningSection = () => {
                             {diningData.badge}
                         </span>
                         <motion.h2
-                            initial={{ opacity: 0, x: -20 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            className="text-4xl md:text-6xl font-black text-primary leading-tight"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true, amount: 0.2 }}
+                            transition={{ duration: 0.8, ease: smoothEase }}
+                            className="text-4xl md:text-6xl font-black text-foreground leading-tight"
                         >
                             {diningData.title.prefix} <span className="text-brand">{diningData.title.highlight}</span>
                         </motion.h2>
@@ -41,11 +45,11 @@ export const DiningSection = () => {
                     </div>
 
                     <div className="relative group">
-                        <Button variant="outline" className="rounded-2xl flex items-center gap-2 border-border hover:border-brand hover:text-brand transition-all bg-muted/30 px-8 py-6 h-auto">
+                        <Button variant="outline" className="rounded-2xl flex items-center gap-2 border-border hover:border-brand hover:text-brand transition-all bg-card px-8 py-6 h-auto">
                             <ShoppingBag className="w-5 h-5" />
                             <span className="font-bold">{diningData.cartButtonText}</span>
                             {cartCount > 0 && (
-                                <span className="absolute -top-3 -right-3 bg-accent text-white text-[10px] font-black w-7 h-7 rounded-full flex items-center justify-center border-4 border-white shadow-xl animate-bounce-slow">
+                                <span className="absolute -top-3 -right-3 bg-accent text-white text-[10px] font-black w-7 h-7 rounded-full flex items-center justify-center border-4 border-card shadow-xl">
                                     {cartCount}
                                 </span>
                             )}
@@ -57,14 +61,14 @@ export const DiningSection = () => {
                     {diningData.categories.map((cat) => (
                         <Button
                             key={cat}
-                            variant={activeCategory === cat ? 'primary' : 'ghost'}
+                            variant={activeCategory === cat ? 'primary' : 'outline'}
                             size="sm"
                             onClick={() => setActiveCategory(cat)}
                             className={cn(
-                                "rounded-xl px-6 py-2 transition-all font-bold",
+                                "rounded-xl px-6 py-2 transition-all duration-300 font-bold",
                                 activeCategory === cat
                                     ? "bg-brand text-white shadow-lg shadow-brand/20"
-                                    : "text-muted-foreground hover:bg-brand/5 hover:text-brand"
+                                    : "bg-card border border-border text-foreground hover:bg-brand/5 hover:text-brand"
                             )}
                         >
                             {cat}
@@ -76,16 +80,17 @@ export const DiningSection = () => {
                     {filteredItems.map((item, index) => (
                         <motion.div
                             key={item.id}
-                            initial={{ opacity: 0, scale: 0.9 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
-                            transition={{ delay: index * 0.05 }}
+                            initial={{ opacity: 0, y: 24 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true, amount: 0.15 }}
+                            transition={{ duration: 0.7, delay: index * 0.08, ease: smoothEase }}
                         >
-                            <Card className="group h-full flex flex-col border-none shadow-lg shadow-black/5 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 rounded-3xl overflow-hidden bg-card">
+                            <Card className="group h-full flex flex-col border-border shadow-lg shadow-black/5 hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-500 rounded-3xl overflow-hidden bg-card">
                                 <div className="relative h-56 overflow-hidden">
                                     <img
                                         src={item.image}
                                         alt={item.name}
-                                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                                     />
                                     {item.tag && (
                                         <div className="absolute top-4 left-4 bg-accent text-white text-[9px] font-black px-3 py-1 rounded-lg flex items-center gap-1.5 shadow-xl tracking-widest uppercase">
@@ -97,7 +102,7 @@ export const DiningSection = () => {
                                 <CardContent className="p-6 flex-grow flex flex-col justify-between">
                                     <div>
                                         <div className="flex justify-between items-start mb-3">
-                                            <h3 className="text-xl font-bold text-primary">{item.name}</h3>
+                                            <h3 className="text-xl font-bold text-foreground">{item.name}</h3>
                                             <span className="text-brand font-black text-lg">Rs.{item.price}</span>
                                         </div>
                                         <p className="text-sm text-muted-foreground mb-6 line-clamp-2 leading-relaxed">

@@ -8,6 +8,8 @@ import { Card } from '../ui/Card';
 import Toast from '../ui/Toast';
 import contactData from '@/data/sections/contact.json';
 
+const smoothEase = [0.22, 1, 0.36, 1] as const;
+
 const iconMap = {
     MapPin,
     Phone,
@@ -39,7 +41,7 @@ export const ContactSection = () => {
                     <div className="space-y-12">
                         <div className="space-y-6">
                             <span className="text-brand font-black tracking-widest uppercase text-xs bg-brand/5 px-4 py-2 rounded-full">{contactData.badge}</span>
-                            <h2 className="text-4xl md:text-6xl font-black text-primary leading-tight">
+                            <h2 className="text-4xl md:text-6xl font-black text-foreground leading-tight">
                                 {contactData.title.prefix} <span className="text-brand">{contactData.title.highlight}</span>
                             </h2>
                             <p className="text-muted-foreground text-xl leading-relaxed">
@@ -53,16 +55,17 @@ export const ContactSection = () => {
                                 return (
                                     <motion.div
                                         key={index}
-                                        initial={{ opacity: 0, y: 20 }}
+                                        initial={{ opacity: 0, y: 18 }}
                                         whileInView={{ opacity: 1, y: 0 }}
-                                        transition={{ delay: index * 0.1 }}
+                                        viewport={{ once: true, amount: 0.15 }}
+                                        transition={{ duration: 0.65, delay: index * 0.08, ease: smoothEase }}
                                         className="flex items-start space-x-5 group"
                                     >
                                         <div className="bg-card p-4 rounded-2xl shadow-lg border border-border group-hover:border-brand group-hover:bg-brand transition-all duration-300">
                                             <IconComponent className="w-6 h-6 text-brand group-hover:text-white" />
                                         </div>
                                         <div>
-                                            <h4 className="font-bold text-lg text-primary">{item.title}</h4>
+                                            <h4 className="font-bold text-lg text-foreground">{item.title}</h4>
                                             <p className="text-muted-foreground whitespace-pre-line">{item.content}</p>
                                         </div>
                                     </motion.div>
@@ -85,8 +88,8 @@ export const ContactSection = () => {
                     </div>
 
                     <div className="relative">
-                        <Card className="p-10 md:p-14 shadow-2xl relative z-10 border-none rounded-[2.5rem] bg-card">
-                            <h3 className="text-3xl font-black mb-8 text-primary">{contactData.form.title}</h3>
+                        <Card className="p-10 md:p-14 shadow-2xl relative z-10 border-border rounded-[2.5rem] bg-card">
+                            <h3 className="text-3xl font-black mb-8 text-foreground">{contactData.form.title}</h3>
                             <form
                                 className="space-y-8"
                                 onSubmit={(e) => {
@@ -101,7 +104,7 @@ export const ContactSection = () => {
                                             type="text"
                                             value={firstName}
                                             onChange={(e) => setFirstName(e.target.value)}
-                                            className="w-full bg-muted/50 border border-border/50 rounded-2xl px-6 py-4 focus:outline-none focus:ring-4 focus:ring-brand/10 focus:border-brand transition-all text-primary placeholder:text-muted-foreground/50"
+                                            className="w-full bg-muted/40 border border-border rounded-2xl px-6 py-4 focus:outline-none focus:ring-4 focus:ring-brand/10 focus:border-brand transition-all text-foreground placeholder:text-muted-foreground/50"
                                             placeholder={contactData.form.firstNamePlaceholder}
                                         />
                                     </div>
@@ -111,7 +114,7 @@ export const ContactSection = () => {
                                             type="text"
                                             value={lastName}
                                             onChange={(e) => setLastName(e.target.value)}
-                                            className="w-full bg-muted/50 border border-border/50 rounded-2xl px-6 py-4 focus:outline-none focus:ring-4 focus:ring-brand/10 focus:border-brand transition-all text-primary placeholder:text-muted-foreground/50"
+                                            className="w-full bg-muted/40 border border-border rounded-2xl px-6 py-4 focus:outline-none focus:ring-4 focus:ring-brand/10 focus:border-brand transition-all text-foreground placeholder:text-muted-foreground/50"
                                             placeholder={contactData.form.lastNamePlaceholder}
                                         />
                                     </div>
@@ -122,7 +125,7 @@ export const ContactSection = () => {
                                         type="email"
                                         value={email}
                                         onChange={(e) => setEmail(e.target.value)}
-                                        className="w-full bg-muted/50 border border-border/50 rounded-2xl px-6 py-4 focus:outline-none focus:ring-4 focus:ring-brand/10 focus:border-brand transition-all text-primary placeholder:text-muted-foreground/50"
+                                        className="w-full bg-muted/40 border border-border rounded-2xl px-6 py-4 focus:outline-none focus:ring-4 focus:ring-brand/10 focus:border-brand transition-all text-foreground placeholder:text-muted-foreground/50"
                                         placeholder={contactData.form.emailPlaceholder}
                                     />
                                 </div>
@@ -132,12 +135,12 @@ export const ContactSection = () => {
                                         rows={4}
                                         value={message}
                                         onChange={(e) => setMessage(e.target.value)}
-                                        className="w-full bg-muted/50 border border-border/50 rounded-2xl px-6 py-4 focus:outline-none focus:ring-4 focus:ring-brand/10 focus:border-brand transition-all text-primary placeholder:text-muted-foreground/50"
+                                        className="w-full bg-muted/40 border border-border rounded-2xl px-6 py-4 focus:outline-none focus:ring-4 focus:ring-brand/10 focus:border-brand transition-all text-foreground placeholder:text-muted-foreground/50"
                                         placeholder={contactData.form.messagePlaceholder}
                                     />
                                 </div>
                                 <div className="relative">
-                                    <Button type="submit" className="w-full py-6 text-xl font-black bg-brand hover:bg-brand/90 hover:scale-[1.02] transition-all rounded-2xl shadow-xl shadow-brand/20">
+                                    <Button type="submit" className="w-full py-6 text-xl font-black bg-brand hover:bg-brand/90 hover:scale-[1.02] text-white transition-all rounded-2xl shadow-xl shadow-brand/20">
                                         {contactData.form.submitButtonText}
                                     </Button>
 
