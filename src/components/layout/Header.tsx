@@ -35,12 +35,16 @@ export const Header = () => {
             )}
         >
             <div className="container-custom flex items-center justify-between">
-                <Link href="/" className="flex items-center space-x-2 group">
-                    <div className="bg-brand p-2 rounded-xl transition-transform group-hover:rotate-12">
-                        <Hotel className="w-6 h-6 text-white" />
+                <Link href="/" className="flex items-center space-x-3 group">
+                    <div className="relative w-10 h-10 rounded-full overflow-hidden border border-border shadow-sm group-hover:scale-105 transition-transform shrink-0">
+                        <img
+                            src="/logo.png"
+                            alt="Syangja Khaja Ghar Logo"
+                            className="w-full h-full object-cover"
+                        />
                     </div>
                     <span className="text-xl font-bold tracking-tight text-foreground">
-                        Syangja <span className="text-brand">Sundar</span>
+                        Syangja <span className="text-brand">Khaja Ghar</span>
                     </span>
                 </Link>
 

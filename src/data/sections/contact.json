@@ -1,0 +1,46 @@
+{
+  "badge": "GET IN TOUCH",
+  "title": {
+    "prefix": "We're Here for",
+    "highlight": "You"
+  },
+  "description": "Whether you're planning a visit or have a question about our menu, our team is ready to assist you.",
+  "contactInfo": [
+    {
+      "icon": "MapPin",
+      "title": "Our Location",
+      "content": "Kawasoti-02, Nawalpur\nLumbini, Nepal"
+    },
+    {
+      "icon": "Phone",
+      "title": "Call Us",
+      "content": "+977 9801234567\n+977 78-500000"
+    },
+    {
+      "icon": "Mail",
+      "title": "Email Us",
+      "content": "info@syangjasundar.com\nbooking@syangjasundar.com"
+    },
+    {
+      "icon": "Clock",
+      "title": "Opening Hours",
+      "content": "8:00 AM - 10:00 PM\nOpen 7 Days a Week"
+    }
+  ],
+  "map": {
+    "embedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d201.8978076062881!2d84.12877668095945!3d27.653168382325006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399451ca43778a1b%3A0x9b8cf80bcd5c5df5!2sSyangja%20Sundar%20Hotel!5e1!3m2!1sen!2snp!4v1744538096747!5m2!1sen!2snp"
+  },
+  "form": {
+    "title": "Send a Message",
+    "firstNameLabel": "First Name",
+    "firstNamePlaceholder": "John",
+    "lastNameLabel": "Last Name",
+    "lastNamePlaceholder": "Doe",
+    "emailLabel": "Email Address",
+    "emailPlaceholder": "john@example.com",
+    "messageLabel": "Message",
+    "messagePlaceholder": "How can we help you?",
+    "submitButtonText": "Send Message",
+    "toastSuccessMessage": "Sent"
+  }
+}

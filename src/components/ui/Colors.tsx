@@ -1,11 +1,11 @@
 import React from 'react';
 
 // Tailwind class tokens for common text/background colors used across the app
-export const textPrimary = 'text-slate-900 dark:text-white';
+export const textPrimary = 'text-foreground';
 export const bgPrimary = 'bg-brand text-white';
-export const textMuted = 'text-slate-700 dark:text-white/80';
-export const textMutedLight = 'text-slate-600 dark:text-white/60';
-export const cardBg = 'bg-card';
+export const textMuted = 'text-muted-foreground';
+export const textMutedLight = 'text-muted-foreground/80';
+export const cardBg = 'bg-card text-card-foreground';
 
 export const PrimaryText: React.FC<React.PropsWithChildren<{ className?: string }>> = ({ children, className = '' }) => (
   <span className={`${textPrimary} ${className}`.trim()}>{children}</span>
