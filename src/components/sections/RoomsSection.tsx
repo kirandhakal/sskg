@@ -85,7 +85,7 @@ export const RoomsSection = () => {
                                     </div>
                                 </CardContent>
                                 <CardFooter className="p-8 pt-0">
-                                    <Button className="w-full bg-primary hover:bg-brand text-primary-foreground hover:text-white rounded-2xl py-6 h-auto font-bold transition-all shadow-md">
+                                    <Button className="w-full rounded-2xl py-4 h-auto text-base font-bold shadow-lg shadow-brand/25 text-white bg-brand hover:bg-brand/90 transition-all">
                                         {roomsData.bookButtonText}
                                     </Button>
                                 </CardFooter>

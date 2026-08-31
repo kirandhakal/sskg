@@ -105,9 +105,7 @@ export const DiningSection = () => {
                                         </p>
                                     </div>
                                     <Button
-                                        variant="ghost"
-                                        size="sm"
-                                        className="w-full bg-brand/5 hover:bg-brand text-brand hover:text-white rounded-xl py-3 h-auto font-black transition-all border-none"
+                                        className="w-full bg-brand hover:bg-brand/90 text-white rounded-xl py-3 h-auto font-bold transition-all shadow-md shadow-brand/20 border-none"
                                         onClick={addToCart}
                                     >
                                         {diningData.addToCartText}
