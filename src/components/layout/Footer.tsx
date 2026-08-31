@@ -9,10 +9,14 @@ export const Footer = () => {
                     {/* Brand */}
                     <div className="space-y-8">
                         <Link href="/" className="flex items-center space-x-3 group">
-                            <div className="bg-brand p-2.5 rounded-2xl group-hover:rotate-12 transition-transform shadow-lg shadow-brand/20">
-                                <Hotel className="w-8 h-8 text-white" />
+                            <div className="relative w-12 h-12 rounded-full overflow-hidden border border-white/20 shadow-lg group-hover:scale-105 transition-transform shrink-0">
+                                <img
+                                    src="/logo.png"
+                                    alt="Syangja Khaja Ghar Logo"
+                                    className="w-full h-full object-cover"
+                                />
                             </div>
-                            <span className="text-3xl font-black tracking-tight text-white">Syangja <span className="text-brand">Sundar</span></span>
+                            <span className="text-3xl font-black tracking-tight text-white">Syangja <span className="text-brand">Khaja Ghar</span></span>
                         </Link>
                         <p className="text-slate-400 text-lg leading-relaxed">
                             Crafting unforgettable memories through authentic Nepali hospitality and timeless traditional flavors since 25 years.
@@ -74,7 +78,7 @@ export const Footer = () => {
 
                 <div className="pt-12 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6">
                     <p className="text-slate-500 text-sm font-medium">
-                        © {new Date().getFullYear()} Syangja Sundar Hotel & Khaja Ghar. Designed with heart.
+                        © {new Date().getFullYear()} Syangja Khaja Ghar. Designed with heart.
                     </p>
                     <div className="flex space-x-8 text-sm font-medium">
                         <Link href="/privacy" className="text-slate-400 hover:text-white transition-colors">Privacy Policy</Link>

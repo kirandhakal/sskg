@@ -17,9 +17,14 @@ const instrumentSerif = Instrument_Serif({
 });
 
 export const metadata: Metadata = {
-  title: 'Syangja Sundar Hotel & Khaja Ghar | Authentic Nepali Hospitality',
-  description: 'Experience the perfect blend of traditional Nepali warmth and modern luxury at Syangja Sundar Hotel & Restaurant in Kawasoti, Nawalpur.',
-  keywords: 'Syangja Sundar, Hotel Nawalpur, Nepali Cuisine, Khaja Ghar, Kawasoti Hotel, Luxury Accommodation Nepal',
+  title: 'Syangja Khaja Ghar | Authentic Nepali Cuisine & Hospitality',
+  description: 'Experience authentic Nepali taste and traditional dishes at Syangja Khaja Ghar in Kawasoti, Nawalpur.',
+  keywords: 'Syangja Khaja Ghar, Syangja Sundar, Kawasoti Restaurant, Nepali Cuisine, Khaja Ghar Nepal',
+  icons: {
+    icon: '/logo.png',
+    shortcut: '/logo.png',
+    apple: '/logo.png',
+  },
 };
 
 export default function RootLayout({

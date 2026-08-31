@@ -8,7 +8,7 @@ export default function PrivacyPage() {
         <div className="max-w-4xl mx-auto">
           <h1 className={`${textPrimary} text-4xl font-semibold mb-6`}>Privacy Policy</h1>
           <p className={`${textMuted} mb-6 leading-relaxed`}>
-            This Privacy Policy explains how Syangja Sundar Hotel & Khaja Ghar ("we", "our", "us") collects,
+            This Privacy Policy explains how Syangja Khaja Ghar ("we", "our", "us") collects,
             uses, discloses, and protects information when you visit or interact with our website.
           </p>
 
