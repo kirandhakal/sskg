@@ -3,7 +3,7 @@ import { textPrimary, textMuted } from '@/components/ui/Colors';
 
 export default function PrivacyPage() {
   return (
-    <main className={`min-h-screen ${textPrimary} bg-white dark:bg-slate-900`}> 
+    <main className="min-h-screen text-foreground bg-background"> 
       <div className="container-custom py-24">
         <div className="max-w-4xl mx-auto">
           <h1 className={`${textPrimary} text-4xl font-semibold mb-6`}>Privacy Policy</h1>
