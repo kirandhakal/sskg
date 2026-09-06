@@ -1,0 +1,13 @@
+{
+  "code": "",
+  "title": "Oops! Your order took a detour.",
+  "description": "The page you are looking for may have moved, or the address may be incorrect. Let us bring you back to the table.",
+  "action": {
+    "label": "Back to home",
+    "href": "/"
+  },
+  "image": {
+    "src": "/images/food-service-404.png",
+    "alt": "Illustration of a serving tray with steaming Nepali food and momo"
+  }
+}
