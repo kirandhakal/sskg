@@ -34,7 +34,7 @@ export const DiningSection = () => {
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, amount: 0.2 }}
-                            transition={{ duration: 0.8, ease: smoothEase }}
+                            transition={{ duration: 0.45, ease: smoothEase }}
                             className="text-4xl md:text-6xl font-black text-foreground leading-tight"
                         >
                             {diningData.title.prefix} <span className="text-brand">{diningData.title.highlight}</span>
@@ -83,7 +83,7 @@ export const DiningSection = () => {
                             initial={{ opacity: 0, y: 24 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, amount: 0.15 }}
-                            transition={{ duration: 0.7, delay: index * 0.08, ease: smoothEase }}
+                            transition={{ duration: 0.4, delay: index * 0.05, ease: smoothEase }}
                         >
                             <Card className="group h-full flex flex-col border-border shadow-lg shadow-black/5 hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-500 rounded-3xl overflow-hidden bg-card">
                                 <div className="relative h-56 overflow-hidden">

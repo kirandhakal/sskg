@@ -17,7 +17,7 @@ export const AboutSection = () => {
                         initial={{ opacity: 0, x: -30 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true, amount: 0.2 }}
-                        transition={{ duration: 0.85, ease: smoothEase }}
+                        transition={{ duration: 0.45, ease: smoothEase }}
                         className="relative"
                     >
                         <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl">
@@ -33,7 +33,7 @@ export const AboutSection = () => {
                             initial={{ opacity: 0, scale: 0.9, y: 10 }}
                             whileInView={{ opacity: 1, scale: 1, y: 0 }}
                             viewport={{ once: true, amount: 0.2 }}
-                            transition={{ duration: 0.7, delay: 0.2, ease: smoothEase }}
+                            transition={{ duration: 0.4, delay: 0.08, ease: smoothEase }}
                             className="absolute -bottom-10 -left-10 bg-card p-8 rounded-3xl shadow-2xl z-20 hidden md:block border border-border"
                         >
                             <span className="text-4xl font-black text-brand block mb-1">{aboutData.experienceBadge.value}</span>
@@ -48,7 +48,7 @@ export const AboutSection = () => {
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true, amount: 0.2 }}
-                                transition={{ duration: 0.8, ease: smoothEase }}
+                                transition={{ duration: 0.45, ease: smoothEase }}
                                 className="text-4xl md:text-6xl font-black text-foreground leading-tight"
                             >
                                 {aboutData.title.prefix} <span className="text-brand">{aboutData.title.highlight}</span> {aboutData.title.suffix}
@@ -67,7 +67,7 @@ export const AboutSection = () => {
                                     initial={{ opacity: 0, y: 15 }}
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true, amount: 0.2 }}
-                                    transition={{ duration: 0.6, delay: index * 0.08, ease: smoothEase }}
+                                    transition={{ duration: 0.35, delay: index * 0.04, ease: smoothEase }}
                                     className="flex items-center space-x-4 bg-muted/40 p-4 rounded-2xl hover:bg-brand/5 transition-colors group border border-border/40"
                                 >
                                     <div className="bg-brand/10 p-2 rounded-xl group-hover:bg-brand transition-colors">

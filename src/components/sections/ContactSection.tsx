@@ -58,7 +58,7 @@ export const ContactSection = () => {
                                         initial={{ opacity: 0, y: 18 }}
                                         whileInView={{ opacity: 1, y: 0 }}
                                         viewport={{ once: true, amount: 0.15 }}
-                                        transition={{ duration: 0.65, delay: index * 0.08, ease: smoothEase }}
+                                        transition={{ duration: 0.4, delay: index * 0.05, ease: smoothEase }}
                                         className="flex items-start space-x-5 group"
                                     >
                                         <div className="bg-card p-4 rounded-2xl shadow-lg border border-border group-hover:border-brand group-hover:bg-brand transition-all duration-300">
@@ -150,7 +150,7 @@ export const ContactSection = () => {
                                                 initial={{ opacity: 0, scale: 0.6, x: -10, y: 8 }}
                                                 animate={{ opacity: 1, x: 220, y: -220, rotate: 20 }}
                                                 exit={{ opacity: 0 }}
-                                                transition={{ duration: 0.85, ease: 'easeInOut' }}
+                                                transition={{ duration: 0.45, ease: 'easeInOut' }}
                                                 className="absolute right-6 top-[-64px] pointer-events-none"
                                             >
                                                 <svg width="56" height="56" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

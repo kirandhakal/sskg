@@ -2,6 +2,8 @@ import type { Metadata } from 'next';
 import { Inter, Instrument_Serif } from 'next/font/google';
 import './globals.css';
 import { Providers } from '@/components/Providers';
+import { Header } from '@/components/layout/Header';
+import { Footer } from '@/components/layout/Footer';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -36,7 +38,9 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={`${inter.variable} ${instrumentSerif.variable} font-sans antialiased text-foreground bg-background`}>
         <Providers>
+          <Header />
           {children}
+          <Footer />
         </Providers>
       </body>
     </html>
