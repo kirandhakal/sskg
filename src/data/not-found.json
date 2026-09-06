@@ -6,8 +6,14 @@
     "label": "Back to home",
     "href": "/"
   },
-  "image": {
-    "src": "/images/food-service-404.png",
-    "alt": "Illustration of a serving tray with steaming Nepali food and momo"
+  "illustration": {
+    "base": {
+      "src": "/images/food-service-404-base.png",
+      "alt": "Illustration of an empty serving tray and bowl"
+    },
+    "floatingFood": {
+      "src": "/images/food-service-404-floating.png",
+      "alt": ""
+    }
   }
 }

@@ -126,6 +126,12 @@
   65% { transform: rotate(-12deg); }
 }
 
+@keyframes food-fall {
+  0%, 100% { transform: translate3d(0, 0, 0) rotate(0deg); }
+  35% { transform: translate3d(0, -2.5%, 0) rotate(-1.5deg); }
+  70% { transform: translate3d(0, 1.5%, 0) rotate(1deg); }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
