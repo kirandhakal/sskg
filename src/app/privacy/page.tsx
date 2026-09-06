@@ -17,7 +17,7 @@ export default function PrivacyPage() {
           {sections.map((section) => (
             <section className="mb-6" key={section.title}>
               <h2 className={`${textPrimary} text-2xl font-medium mb-3`}>{section.title}</h2>
-              {'items' in section ? (
+              {section.items ? (
                 <ul className={`${textMuted} list-disc pl-6 space-y-2`}>
                   {section.items.map((item) => (
                     <li key={item}>{item}</li>

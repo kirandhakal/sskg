@@ -71,7 +71,7 @@ export const AboutSection = () => {
                                     className="flex items-center space-x-4 bg-muted/40 p-4 rounded-2xl hover:bg-brand/5 transition-colors group border border-border/40"
                                 >
                                     <div className="bg-brand/10 p-2 rounded-xl group-hover:bg-brand transition-colors">
-                                        <Check className="w-5 h-5 text-brand group-hover:text-white" />
+                                        <Check className="w-5 h-5 text-brand group-hover:text-primary-foreground" />
                                     </div>
                                     <span className="font-bold text-foreground">{item}</span>
                                 </motion.div>

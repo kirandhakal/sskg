@@ -62,7 +62,7 @@ export const ContactSection = () => {
                                         className="flex items-start space-x-5 group"
                                     >
                                         <div className="bg-card p-4 rounded-2xl shadow-lg border border-border group-hover:border-brand group-hover:bg-brand transition-all duration-300">
-                                            <IconComponent className="w-6 h-6 text-brand group-hover:text-white" />
+                                            <IconComponent className="w-6 h-6 text-brand group-hover:text-primary-foreground" />
                                         </div>
                                         <div>
                                             <h4 className="font-bold text-lg text-foreground">{item.title}</h4>
@@ -140,7 +140,7 @@ export const ContactSection = () => {
                                     />
                                 </div>
                                 <div className="relative">
-                                    <Button type="submit" className="w-full py-6 text-xl font-black bg-brand hover:bg-brand/90 hover:scale-[1.02] text-white transition-all rounded-2xl shadow-xl shadow-brand/20">
+                                    <Button type="submit" className="w-full py-6 text-xl font-black bg-brand hover:bg-brand/90 hover:scale-[1.02] text-primary-foreground transition-all rounded-2xl shadow-xl shadow-brand/20">
                                         {contactData.form.submitButtonText}
                                     </Button>
 
@@ -154,7 +154,7 @@ export const ContactSection = () => {
                                                 className="absolute right-6 top-[-64px] pointer-events-none"
                                             >
                                                 <svg width="56" height="56" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <path d="M2 12L22 3L14 21L11 13L2 12Z" fill="#06b6d4" />
+                                                    <path d="M2 12L22 3L14 21L11 13L2 12Z" fill="currentColor" />
                                                 </svg>
                                             </motion.div>
                                         )}

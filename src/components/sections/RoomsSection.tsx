@@ -43,7 +43,7 @@ export const RoomsSection = () => {
                                 className={cn(
                                     "rounded-full px-8 font-semibold transition-all duration-300",
                                     activeCategory === cat
-                                        ? "bg-brand text-white border-transparent shadow-lg shadow-brand/20"
+                                        ? "bg-brand text-primary-foreground border-transparent shadow-lg shadow-brand/20"
                                         : "bg-card border-border text-foreground hover:border-brand hover:text-brand"
                                 )}
                             >
@@ -90,7 +90,7 @@ export const RoomsSection = () => {
                                     </div>
                                 </CardContent>
                                 <CardFooter className="p-8 pt-0">
-                                    <Button className="w-full rounded-2xl py-4 h-auto text-base font-bold shadow-lg shadow-brand/25 text-white bg-brand hover:bg-brand/90 transition-all">
+                                    <Button className="w-full rounded-2xl py-4 h-auto text-base font-bold shadow-lg shadow-brand/25 text-primary-foreground bg-brand hover:bg-brand/90 transition-all">
                                         {roomsData.bookButtonText}
                                     </Button>
                                 </CardFooter>
