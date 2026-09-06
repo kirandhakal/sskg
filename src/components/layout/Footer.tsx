@@ -9,11 +9,11 @@ export const Footer = () => {
                     {/* Brand */}
                     <div className="space-y-8">
                         <Link href="/" className="flex items-center space-x-3 group">
-                            <div className="relative w-12 h-12 rounded-full overflow-hidden border border-accent/40 shadow-lg group-hover:scale-105 transition-transform shrink-0">
+                            <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-full border-2 border-accent bg-primary-foreground p-0.5 shadow-lg transition-transform group-hover:scale-105">
                                 <img
-                                    src="/logo.png"
+                                    src="/icon.png"
                                     alt="Syangja Khaja Ghar Logo"
-                                    className="w-full h-full object-cover"
+                                    className="h-full w-full rounded-full object-cover"
                                 />
                             </div>
                             <span className="text-3xl font-black tracking-tight text-primary-foreground">Syangja <span className="text-highlight">Khaja Ghar</span></span>

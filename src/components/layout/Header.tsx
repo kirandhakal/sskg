@@ -36,11 +36,11 @@ export const Header = () => {
         >
             <div className="container-custom flex items-center justify-between">
                 <Link href="/" className="flex items-center space-x-3 group">
-                    <div className="relative w-10 h-10 rounded-full overflow-hidden border border-border shadow-sm group-hover:scale-105 transition-transform shrink-0">
+                    <div className="relative h-12 w-12 shrink-0 overflow-hidden rounded-full border-2 border-accent bg-card p-0.5 shadow-md shadow-brand/20 transition-transform group-hover:scale-105">
                         <img
-                            src="/logo.png"
+                            src="/icon.png"
                             alt="Syangja Khaja Ghar Logo"
-                            className="w-full h-full object-cover"
+                            className="h-full w-full rounded-full object-cover"
                         />
                     </div>
                     <span className="text-xl font-bold tracking-tight text-foreground">

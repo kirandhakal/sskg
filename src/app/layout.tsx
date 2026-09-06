@@ -23,9 +23,9 @@ export const metadata: Metadata = {
   description: 'Experience authentic Nepali taste and traditional dishes at Syangja Khaja Ghar in Kawasoti, Nawalpur.',
   keywords: 'Syangja Khaja Ghar, Syangja Sundar, Kawasoti Restaurant, Nepali Cuisine, Khaja Ghar Nepal',
   icons: {
-    icon: '/logo.png',
-    shortcut: '/logo.png',
-    apple: '/logo.png',
+    icon: '/icon.png',
+    shortcut: '/icon.png',
+    apple: '/icon.png',
   },
 };
 
