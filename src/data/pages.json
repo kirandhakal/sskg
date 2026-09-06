@@ -1,0 +1,102 @@
+{
+  "about": {
+    "hero": {
+      "title": "Our Story",
+      "description": "Learn about our journey from a local khaja ghar to a renowned destination for hospitality and traditional Nepali cuisine."
+    }
+  },
+  "rooms": {
+    "hero": {
+      "title": "Our Accommodations",
+      "description": "Discover our range of comfortable rooms designed to provide you with the best resting experience in Syangja."
+    }
+  },
+  "dining": {
+    "hero": {
+      "title": "Syangja Khaja Ghar",
+      "description": "Experience the authentic taste of Syangja region with our meticulously prepared traditional dishes and modern snacks."
+    }
+  },
+  "contact": {
+    "hero": {
+      "title": "Contact Us",
+      "description": "We're here to assist you. Reach out for reservations, inquiries, or just to say Namaste."
+    }
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "description": "This Privacy Policy explains how Syangja Khaja Ghar (\"we\", \"our\", \"us\") collects, uses, discloses, and protects information when you visit or interact with our website.",
+    "sections": [
+      {
+        "title": "Information We Collect",
+        "items": [
+          "Contact information you provide (name, email, phone number).",
+          "Booking and reservation details when you use our services.",
+          "Usage data from cookies and analytics tools."
+        ]
+      },
+      {
+        "title": "How We Use Your Information",
+        "content": "We use collected information to: respond to inquiries, provide and improve our services, process reservations, and comply with legal obligations. We may also use aggregated or anonymized data for analytics and business insights."
+      },
+      {
+        "title": "Cookies & Tracking",
+        "content": "We use cookies and similar technologies to operate our site, remember preferences, and measure performance. You can control cookies through your browser settings; disabling cookies may affect site functionality."
+      },
+      {
+        "title": "Third-Party Services",
+        "content": "We may share data with trusted third parties (payment processors, analytics providers) only as necessary to provide the service and under confidentiality commitments."
+      },
+      {
+        "title": "Your Rights",
+        "content": "You may request access, correction, or deletion of personal data we hold about you. To exercise these rights, contact us using the details below."
+      },
+      {
+        "title": "Security & Retention",
+        "content": "We take reasonable measures to protect personal information. We retain data only as long as necessary for the purposes described and to satisfy legal obligations."
+      },
+      {
+        "title": "Contact",
+        "content": "For questions about this policy or to exercise your rights, email: info@syangjasundar.com"
+      }
+    ]
+  },
+  "terms": {
+    "title": "Terms & Conditions",
+    "description": "These Terms and Conditions govern your use of our website and services.",
+    "sections": [
+      {
+        "title": "Acceptance of Terms",
+        "content": "By accessing or using our site you agree to these terms. If you disagree, please do not use the site."
+      },
+      {
+        "title": "Services",
+        "content": "We provide hospitality and booking services. Descriptions on the site do not constitute a contractual offer; confirmations occur through our booking process."
+      },
+      {
+        "title": "User Obligations",
+        "content": "You agree to provide accurate information and comply with applicable laws. You may not use the site for unlawful purposes."
+      },
+      {
+        "title": "Intellectual Property",
+        "content": "All content on this site is owned or licensed by us. You may not reproduce materials without permission."
+      },
+      {
+        "title": "Disclaimers & Liability",
+        "content": "Services are provided \"as is\". We disclaim warranties to the fullest extent permitted by law. Liability is limited as allowed by applicable law."
+      },
+      {
+        "title": "Governing Law",
+        "content": "These terms are governed by the laws of the jurisdiction in which we operate."
+      },
+      {
+        "title": "Changes",
+        "content": "We may update these terms; changes will be posted on this page with a revised effective date."
+      },
+      {
+        "title": "Contact",
+        "content": "Questions about these terms: info@syangjasundar.com"
+      }
+    ]
+  }
+}

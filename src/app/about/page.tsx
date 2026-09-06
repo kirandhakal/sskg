@@ -1,16 +1,19 @@
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { AboutSection } from '@/components/sections/AboutSection';
+import { pagesData } from '@/data/sections';
 
 export default function AboutPage() {
+    const { hero } = pagesData.about;
+
     return (
         <main className="min-h-screen pt-24">
             <Header />
             <div className="py-12 bg-muted/30">
                 <div className="container-custom">
-                    <h1 className="text-4xl md:text-6xl font-bold mb-4">Our Story</h1>
+                    <h1 className="text-4xl md:text-6xl font-bold mb-4">{hero.title}</h1>
                     <p className="text-xl text-muted-foreground max-w-2xl">
-                        Learn about our journey from a local khaja ghar to a renowned destination for hospitality and traditional Nepali cuisine.
+                        {hero.description}
                     </p>
                 </div>
             </div>
