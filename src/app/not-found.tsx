@@ -14,7 +14,7 @@ export default function NotFound() {
             width={1024}
             height={1024}
             priority
-            className="h-auto w-full"
+            className="h-auto w-full translate-y-8 md:translate-y-12"
           />
           <Image
             src={notFoundData.illustration.floatingFood.src}
@@ -23,7 +23,7 @@ export default function NotFound() {
             height={1024}
             priority
             aria-hidden="true"
-            className="pointer-events-none absolute inset-0 h-full w-full animate-[food-fall_3.8s_ease-in-out_infinite]"
+            className="pointer-events-none absolute inset-0 h-full w-full animate-[food-fall_2.8s_cubic-bezier(0.45,0,0.55,1)_infinite]"
           />
         </div>
         <div className="mx-auto max-w-xl text-center lg:order-2 lg:mx-0 lg:text-left">
