@@ -24,7 +24,7 @@ export const Toast: React.FC<ToastProps> = ({ open, onClose, message = 'Sent' })
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: 8, scale: 0.98 }}
               transition={{ duration: 0.28 }}
-              className="pointer-events-auto bg-primary text-white px-5 py-3 rounded-2xl shadow-lg"
+              className="pointer-events-auto bg-primary text-primary-foreground px-5 py-3 rounded-2xl shadow-lg"
             >
               <div className="font-semibold">{message}</div>
             </motion.div>

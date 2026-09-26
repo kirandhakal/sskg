@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { Button } from '../ui/Button';
 import heroData from '@/data/sections/hero.json';
 
-const smoothTransition = { duration: 0.9, ease: [0.22, 1, 0.36, 1] as const };
+const smoothTransition = { duration: 0.45, ease: [0.22, 1, 0.36, 1] as const };
 
 export const Hero = () => {
     return (
@@ -55,7 +55,7 @@ export const Hero = () => {
                 <motion.div
                     initial={{ opacity: 0, scale: 0.95, y: 20 }}
                     animate={{ opacity: 1, scale: 1, y: 0 }}
-                    transition={{ duration: 1.0, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+                    transition={{ duration: 0.5, delay: 0.05, ease: [0.22, 1, 0.36, 1] }}
                     className="relative hidden lg:block"
                 >
                     <div className="relative z-10 rounded-[4rem] overflow-hidden shadow-[0_50px_100px_-20px_rgba(0,0,0,0.15)] aspect-[4/5]">
@@ -72,7 +72,7 @@ export const Hero = () => {
                     {heroData.floatingCards[0] && (
                         <motion.div
                             animate={{ y: [0, -10, 0] }}
-                            transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
+                            transition={{ duration: 3.5, repeat: Infinity, ease: 'easeInOut' }}
                             className="absolute top-20 -left-12 bg-card border border-border/60 p-6 rounded-3xl shadow-2xl z-20"
                         >
                             <div className="bg-brand/10 p-3 rounded-2xl mb-3 flex items-center justify-center">
@@ -85,7 +85,7 @@ export const Hero = () => {
                     {heroData.floatingCards[1] && (
                         <motion.div
                             animate={{ y: [0, 10, 0] }}
-                            transition={{ duration: 5.5, repeat: Infinity, ease: 'easeInOut', delay: 0.5 }}
+                            transition={{ duration: 3.8, repeat: Infinity, ease: 'easeInOut', delay: 0.25 }}
                             className="absolute bottom-20 -right-12 bg-card border border-border/60 p-6 rounded-3xl shadow-2xl z-20"
                         >
                             <div className="bg-highlight/10 p-3 rounded-2xl mb-3 flex items-center justify-center">

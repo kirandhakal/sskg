@@ -24,7 +24,7 @@ export const ReviewsSection: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.15 }}
-              transition={{ duration: 0.7, delay: idx * 0.1, ease: smoothEase }}
+              transition={{ duration: 0.4, delay: idx * 0.05, ease: smoothEase }}
             >
               <Card className="h-full bg-card border-border shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-500">
                 <div className="p-6 flex flex-col h-full">

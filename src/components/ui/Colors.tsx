@@ -2,7 +2,7 @@ import React from 'react';
 
 // Tailwind class tokens for common text/background colors used across the app
 export const textPrimary = 'text-foreground';
-export const bgPrimary = 'bg-brand text-white';
+export const bgPrimary = 'bg-brand text-primary-foreground';
 export const textMuted = 'text-muted-foreground';
 export const textMutedLight = 'text-muted-foreground/80';
 export const cardBg = 'bg-card text-card-foreground';

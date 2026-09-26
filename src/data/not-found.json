@@ -1,0 +1,19 @@
+{
+  "code": "",
+  "title": "Oops! Your order took a detour.",
+  "description": "The page you are looking for may have moved, or the address may be incorrect. Let us bring you back to the table.",
+  "action": {
+    "label": "Back to home",
+    "href": "/"
+  },
+  "illustration": {
+    "base": {
+      "src": "/images/food-service-404-base.png",
+      "alt": "Illustration of an empty serving tray and bowl"
+    },
+    "floatingFood": {
+      "src": "/images/food-service-404-floating.png",
+      "alt": ""
+    }
+  }
+}

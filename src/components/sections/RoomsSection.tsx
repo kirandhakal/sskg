@@ -24,7 +24,7 @@ export const RoomsSection = () => {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, amount: 0.2 }}
-                        transition={{ duration: 0.8, ease: smoothEase }}
+                        transition={{ duration: 0.45, ease: smoothEase }}
                         className="text-4xl md:text-5xl font-black text-foreground"
                     >
                         {roomsData.title}
@@ -43,7 +43,7 @@ export const RoomsSection = () => {
                                 className={cn(
                                     "rounded-full px-8 font-semibold transition-all duration-300",
                                     activeCategory === cat
-                                        ? "bg-brand text-white border-transparent shadow-lg shadow-brand/20"
+                                        ? "bg-brand text-primary-foreground border-transparent shadow-lg shadow-brand/20"
                                         : "bg-card border-border text-foreground hover:border-brand hover:text-brand"
                                 )}
                             >
@@ -60,7 +60,7 @@ export const RoomsSection = () => {
                             initial={{ opacity: 0, y: 24 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, amount: 0.15 }}
-                            transition={{ duration: 0.75, delay: index * 0.1, ease: smoothEase }}
+                            transition={{ duration: 0.4, delay: index * 0.05, ease: smoothEase }}
                         >
                             <Card className="h-full flex flex-col group border-border shadow-xl hover:shadow-2xl hover:shadow-brand/5 transition-all duration-500 rounded-3xl overflow-hidden bg-card">
                                 <div className="relative h-72 overflow-hidden">
@@ -90,7 +90,7 @@ export const RoomsSection = () => {
                                     </div>
                                 </CardContent>
                                 <CardFooter className="p-8 pt-0">
-                                    <Button className="w-full rounded-2xl py-4 h-auto text-base font-bold shadow-lg shadow-brand/25 text-white bg-brand hover:bg-brand/90 transition-all">
+                                    <Button className="w-full rounded-2xl py-4 h-auto text-base font-bold shadow-lg shadow-brand/25 text-primary-foreground bg-brand hover:bg-brand/90 transition-all">
                                         {roomsData.bookButtonText}
                                     </Button>
                                 </CardFooter>

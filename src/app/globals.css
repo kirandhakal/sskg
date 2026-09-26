@@ -22,8 +22,8 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
 
-  --color-brand: #3b82f6;
-  --color-highlight: #f59e0b;
+  --color-brand: #08264a;
+  --color-highlight: #b56a3c;
 
   --radius-xl: 1rem;
   --radius-2xl: 1.5rem;
@@ -31,39 +31,39 @@
 }
 
 :root {
-  --background: #ffffff;
-  --foreground: #0f172a;
-  --card: #ffffff;
-  --card-foreground: #0f172a;
-  --popover: #ffffff;
-  --popover-foreground: #0f172a;
-  --primary: #0f172a;
-  --primary-foreground: #ffffff;
-  --muted: #f8fafc;
-  --muted-foreground: #64748b;
-  --accent: #f1f5f9;
-  --accent-foreground: #0f172a;
-  --border: #e2e8f0;
-  --input: #e2e8f0;
-  --ring: #3b82f6;
+  --background: #fbf4e8;
+  --foreground: #102640;
+  --card: #fffaf1;
+  --card-foreground: #102640;
+  --popover: #fffaf1;
+  --popover-foreground: #102640;
+  --primary: #08264a;
+  --primary-foreground: #fff7ea;
+  --muted: #f2e5d4;
+  --muted-foreground: #6d5948;
+  --accent: #b56a3c;
+  --accent-foreground: #fff7ea;
+  --border: #dec7ad;
+  --input: #dec7ad;
+  --ring: #b56a3c;
 }
 
 .dark {
-  --background: #090d16;
-  --foreground: #f8fafc;
-  --card: #111827;
-  --card-foreground: #f8fafc;
-  --popover: #111827;
-  --popover-foreground: #f8fafc;
-  --primary: #f8fafc;
-  --primary-foreground: #0f172a;
-  --muted: #1e293b;
-  --muted-foreground: #94a3b8;
-  --accent: #1e293b;
-  --accent-foreground: #f8fafc;
-  --border: #1e293b;
-  --input: #1e293b;
-  --ring: #3b82f6;
+  --background: #06182e;
+  --foreground: #fff7ea;
+  --card: #0b213c;
+  --card-foreground: #fff7ea;
+  --popover: #0b213c;
+  --popover-foreground: #fff7ea;
+  --primary: #f0b68d;
+  --primary-foreground: #06182e;
+  --muted: #142d4c;
+  --muted-foreground: #d8c3ad;
+  --accent: #c77a4a;
+  --accent-foreground: #fff7ea;
+  --border: #274663;
+  --input: #274663;
+  --ring: #c77a4a;
 }
 
 @layer base {
@@ -110,9 +110,38 @@
   }
 }
 
-/* Smooth Transitions */
-* {
-  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+@keyframes loading-bar {
+  0%, 100% { transform: translateX(-100%); }
+  50% { transform: translateX(200%); }
+}
+
+@keyframes hotel-room {
+  0%, 100% { background-color: color-mix(in srgb, var(--accent) 25%, transparent); }
+  50% { background-color: var(--accent); }
+}
+
+@keyframes hotel-bell {
+  0%, 100% { transform: rotate(0deg); }
+  35% { transform: rotate(12deg); }
+  65% { transform: rotate(-12deg); }
+}
+
+@keyframes food-fall {
+  0%, 100% { transform: translate3d(0, 0, 0) rotate(0deg); }
+  28% { transform: translate3d(-2.5%, -6%, 0) rotate(-3deg); }
+  58% { transform: translate3d(2%, -1%, 0) rotate(2deg); }
+  76% { transform: translate3d(-0.75%, 1.25%, 0) rotate(-0.75deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 /* Accessible hidden class */
