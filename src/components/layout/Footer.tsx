@@ -1,5 +1,8 @@
-import { Facebook, Instagram, Twitter, MapPin, Phone, Mail } from 'lucide-react';
+import { Facebook, Instagram, Twitter, MapPin, Phone, Mail, Clock } from 'lucide-react';
 import Link from 'next/link';
+import contactData from '@/data/sections/contact.json';
+
+const contactIcons = { MapPin, Phone, Mail, Clock };
 
 export const Footer = () => {
     return (
@@ -54,32 +57,42 @@ export const Footer = () => {
                     <div className="space-y-8">
                         <h3 className="text-xl font-bold border-b border-accent/30 pb-4 inline-block text-primary-foreground">Contact</h3>
                         <ul className="space-y-6">
-                            <li className="flex items-start space-x-4">
-                                <div className="p-2 bg-highlight/20 rounded-lg shrink-0">
-                                    <MapPin className="w-5 h-5 text-highlight" />
-                                </div>
-                                <span className="text-primary-foreground/70 font-medium">Kawasoti-02, Nawalpur<br />Lumbini, Nepal</span>
-                            </li>
-                            <li className="flex items-center space-x-4">
-                                <div className="p-2 bg-highlight/20 rounded-lg shrink-0">
-                                    <Phone className="w-5 h-5 text-highlight" />
-                                </div>
-                                <span className="text-primary-foreground/70 font-medium">+977 9801234567</span>
-                            </li>
-                            <li className="flex items-center space-x-4">
-                                <div className="p-2 bg-highlight/20 rounded-lg shrink-0">
-                                    <Mail className="w-5 h-5 text-highlight" />
-                                </div>
-                                <span className="text-primary-foreground/70 font-medium text-sm">info@syangjasundar.com</span>
-                            </li>
+                            {contactData.contactInfo.map((info) => {
+                                const Icon = contactIcons[info.icon as keyof typeof contactIcons];
+                                const lines = info.content.split('\n');
+                                return (
+                                    <li key={info.title} className="flex items-start space-x-4">
+                                        <div className="p-2 bg-highlight/20 rounded-lg shrink-0">
+                                            <Icon className="w-5 h-5 text-highlight" />
+                                        </div>
+                                        <div className="flex flex-col text-primary-foreground/70 font-medium">
+                                            {lines.map((line) => {
+                                                if (info.icon === 'Phone') {
+                                                    return <a key={line} href={`tel:${line.replace(/\s/g, '')}`} className="hover:text-highlight transition-colors">{line}</a>;
+                                                }
+                                                if (info.icon === 'Mail') {
+                                                    return <a key={line} href={`mailto:${line}`} className="hover:text-highlight transition-colors text-sm break-all">{line}</a>;
+                                                }
+                                                return <span key={line}>{line}</span>;
+                                            })}
+                                        </div>
+                                    </li>
+                                );
+                            })}
                         </ul>
                     </div>
                 </div>
 
                 <div className="pt-12 border-t border-accent/30 flex flex-col md:flex-row justify-between items-center gap-6">
-                    <p className="text-primary-foreground/55 text-sm font-medium">
-                        © {new Date().getFullYear()} Syangja Khaja Ghar. Designed with heart.
-                    </p>
+                    <div className="flex flex-col items-center md:items-start gap-1 text-sm font-medium">
+                        <p className="text-primary-foreground/55">
+                            © {new Date().getFullYear()} Syangja Khaja Ghar. All rights reserved.
+                        </p>
+                        <p className="text-primary-foreground/55">
+                            Created & designed by{' '}
+                            <a href="https://dhakalkiran.com.np" target="_blank" rel="noopener noreferrer" className="text-highlight hover:underline">Kiran Dhakal</a>
+                        </p>
+                    </div>
                     <div className="flex space-x-8 text-sm font-medium">
                         <Link href="/privacy" className="text-primary-foreground/70 hover:text-highlight transition-colors">Privacy Policy</Link>
                         <Link href="/terms" className="text-primary-foreground/70 hover:text-highlight transition-colors">Terms of Service</Link>
