@@ -75,6 +75,7 @@
 /* Text on blue brand surfaces (buttons, footer) is light */
 .dark .bg-brand {
   --primary-foreground: var(--accent-foreground);
+  --color-primary-foreground: var(--accent-foreground);
   color: var(--primary-foreground);
 }
 

@@ -1,6 +1,6 @@
 import { Hero } from '@/components/sections/Hero';
 import { AboutSection } from '@/components/sections/AboutSection';
-import { RoomsSection } from '@/components/sections/RoomsSection';
+// import { RoomsSection } from '@/components/sections/RoomsSection';
 import { DiningSection } from '@/components/sections/DiningSection';
 import ReviewsSection from '@/components/sections/ReviewsSection';
 import { ContactSection } from '@/components/sections/ContactSection';
@@ -10,7 +10,7 @@ export default function Home() {
     <main className="min-h-screen">
       <Hero />
       <AboutSection />
-      <RoomsSection />
+      {/* <RoomsSection /> */}
       <DiningSection />
       <ReviewsSection />
       <ContactSection />

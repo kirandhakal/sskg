@@ -33,7 +33,7 @@ export const Footer = () => {
                         <h3 className="text-xl font-bold border-b border-accent/30 pb-4 inline-block text-primary-foreground">Explore</h3>
                         <ul className="space-y-4">
                             <li><Link href="/" className="text-primary-foreground/70 hover:text-highlight transition-colors font-medium">Home</Link></li>
-                            <li><Link href="/rooms" className="text-primary-foreground/70 hover:text-highlight transition-colors font-medium">Our Accommodations</Link></li>
+                            {/* <li><Link href="/rooms" className="text-primary-foreground/70 hover:text-highlight transition-colors font-medium">Our Accommodations</Link></li> */}
                             <li><Link href="/dining" className="text-primary-foreground/70 hover:text-highlight transition-colors font-medium">Dining Experience</Link></li>
                             <li><Link href="/about" className="text-primary-foreground/70 hover:text-highlight transition-colors font-medium">Our Story</Link></li>
                         </ul>
