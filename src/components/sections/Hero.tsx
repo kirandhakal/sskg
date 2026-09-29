@@ -21,7 +21,7 @@ export const Hero = () => {
                         {heroData.badge}
                     </span>
                     <h1 className="text-5xl md:text-7xl font-serif text-primary leading-[1.05] mb-8">
-                        {heroData.title.prefix} <span className="text-brand">{heroData.title.highlight}</span> <br className="hidden md:block" /> {heroData.title.suffix}
+                        {heroData.title.prefix} <span className="text-highlight dark:text-accent">{heroData.title.highlight}</span> <br className="hidden md:block" /> {heroData.title.suffix}
                     </h1>
                     <p className="text-xl text-muted-foreground mb-10 leading-relaxed max-w-lg">
                         {heroData.description}

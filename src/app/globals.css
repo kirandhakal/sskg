@@ -66,6 +66,18 @@
   --ring: #c77a4a;
 }
 
+/* Brand color is a fixed dark navy, so brand text uses the dark primary instead */
+.dark .text-brand,
+.dark strong {
+  color: var(--primary);
+}
+
+/* Text on blue brand surfaces (buttons, footer) is light */
+.dark .bg-brand {
+  --primary-foreground: var(--accent-foreground);
+  color: var(--primary-foreground);
+}
+
 @layer base {
   * {
     border-color: var(--border);
