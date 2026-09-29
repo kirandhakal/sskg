@@ -79,6 +79,21 @@
   color: var(--primary-foreground);
 }
 
+/* Hover states that switch to the brand navy */
+.dark .hover\:text-brand:hover,
+.dark .group:hover .group-hover\:text-brand {
+  color: var(--primary);
+}
+
+.dark .hover\:border-brand:hover,
+.dark .group:hover .group-hover\:border-brand {
+  border-color: var(--primary);
+}
+
+.dark .group:hover .group-hover\:text-primary-foreground {
+  color: var(--accent-foreground);
+}
+
 @layer base {
   * {
     border-color: var(--border);
