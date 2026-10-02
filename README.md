@@ -39,11 +39,19 @@ npm run dev
 
 ## Connect to Universal CMS
 
-SSKG supports CMS content on every existing route. No seed or automatic content
-population is required. The existing `src/data` JSON remains the fallback.
+SSKG supports CMS content on every existing route. Its content definitions are
+frontend-owned in `cms/section-definitions.json` and registered as website data
+in Universal CMS, not compiled into its backend. The local SSKG website now has
+nine published demo pages. No seed runs automatically. Existing `src/data` JSON
+remains the fallback.
+
+Read the complete [CMS connection guide](../docs/cms-frontend-connection.md) for
+architecture, editing, page mappings, publishing, and connecting another frontend.
 
 1. Start the updated Universal CMS backend and admin frontend.
-2. Create your website in the CMS. Copy its public key from **Connect a frontend**.
+2. Create your website in the CMS. Import `cms/section-definitions.json` in
+   **Website content types & connection**, save it, and copy the public key from
+   **Connect a frontend**. This is already configured for the local SSKG demo.
 3. Edit `sskg/.env.local` (created locally; `.env.example` is the shareable template):
    - `CMS_GRAPHQL_URL`: your backend's public GraphQL endpoint.
    - `CMS_SITE_SLUG`: the exact slug of the website you created.

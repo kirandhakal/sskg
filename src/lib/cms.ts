@@ -1,5 +1,6 @@
 import { cache } from 'react';
 import * as fallback from '@/data/sections';
+import definitions from '../../cms/section-definitions.json';
 
 export const sectionDefaults = {
   'sskg-header': fallback.headerData,
@@ -20,18 +21,32 @@ export type SectionType = keyof typeof sectionDefaults;
 export type ContentSection = { [K in SectionType]: { type: K; data: typeof sectionDefaults[K] } }[SectionType];
 type CmsPage = { title: string; seo: Record<string, unknown>; sections: ContentSection[] };
 
-// Reject malformed content before it reaches the existing presentation components.
-export function matchesShape(sample: unknown, value: unknown): boolean {
-  if (typeof sample !== typeof value || value === null) return false;
-  if (Array.isArray(sample)) {
-    return Array.isArray(value) && value.every(item => sample.some(example => matchesShape(example, item)));
+type ContentSchema = {
+  type: string; properties?: Record<string, ContentSchema>; required?: string[];
+  items?: ContentSchema; maxItems?: number; minItems?: number;
+  minLength?: number; maxLength?: number; minimum?: number; maximum?: number;
+  format?: string;
+};
+// Use the same frontend-owned contract registered in the CMS, including optional fields.
+export function matchesSchema(schema: ContentSchema, value: unknown): boolean {
+  if (schema.type === 'object') {
+    if (!value || typeof value !== 'object' || Array.isArray(value)) return false;
+    const data = value as Record<string, unknown>;
+    if (schema.required?.some(key => !Object.hasOwn(data, key))) return false;
+    return Object.entries(data).every(([key, child]) => {
+      const property = schema.properties?.[key];
+      return property !== undefined && matchesSchema(property, child);
+    });
   }
-  if (typeof sample === 'object' && sample !== null) {
-    if (Array.isArray(value)) return false;
-    return Object.entries(sample).every(([key, child]) =>
-      matchesShape(child, (value as Record<string, unknown>)[key]));
-  }
-  return true;
+  if (schema.type === 'array') return Array.isArray(value) &&
+    value.length <= (schema.maxItems ?? 100) && value.length >= (schema.minItems ?? 0) &&
+    !!schema.items && value.every(item => matchesSchema(schema.items!, item));
+  if (schema.type === 'string') return typeof value === 'string' &&
+    value.length <= (schema.maxLength ?? 10000) && value.length >= (schema.minLength ?? 0) &&
+    (schema.format !== 'link' || /^(https?:\/\/[^\s]+|\/(?!\/)[^\s]*|mailto:[^\s]+|tel:[+0-9() -]+|#[a-zA-Z0-9_-]*)$/.test(value));
+  if (schema.type === 'number' || schema.type === 'integer') return typeof value === 'number' && Number.isFinite(value) &&
+    (schema.type !== 'integer' || Number.isInteger(value)) && value >= (schema.minimum ?? -Infinity) && value <= (schema.maximum ?? Infinity);
+  return schema.type === 'boolean' && typeof value === 'boolean';
 }
 
 export const getCmsPage = cache(async (pageSlug: string): Promise<CmsPage | null> => {
@@ -59,8 +74,9 @@ export const getCmsPage = cache(async (pageSlug: string): Promise<CmsPage | null
     const page = result.data?.page;
     if (result.errors?.length || !page || !Array.isArray(page.sections)) return null;
     for (const section of page.sections) {
-      if (!section || !Object.hasOwn(sectionDefaults, section.type) || section.schemaVersion !== 1 ||
-          !matchesShape(sectionDefaults[section.type as SectionType], section.data)) return null;
+      const definition = definitions.find(item => item.type === section?.type);
+      if (!section || !definition || section.schemaVersion !== definition.version ||
+          !matchesSchema(definition.schema as unknown as ContentSchema, section.data)) return null;
     }
     return page;
   } catch {

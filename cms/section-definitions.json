@@ -1,0 +1,1425 @@
+[
+  {
+    "type": "sskg-hero",
+    "label": "SSKG Hero",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "badge": {
+          "type": "string",
+          "maxLength": 10000
+        },
+        "title": {
+          "type": "object",
+          "properties": {
+            "prefix": {
+              "type": "string",
+              "maxLength": 10000
+            },
+            "highlight": {
+              "type": "string",
+              "maxLength": 10000
+            },
+            "suffix": {
+              "type": "string",
+              "maxLength": 10000
+            }
+          },
+          "required": [
+            "prefix",
+            "highlight",
+            "suffix"
+          ],
+          "additionalProperties": false
+        },
+        "description": {
+          "type": "string",
+          "maxLength": 10000
+        },
+        "primaryCta": {
+          "type": "object",
+          "properties": {
+            "text": {
+              "type": "string",
+              "maxLength": 10000
+            },
+            "href": {
+              "type": "string",
+              "maxLength": 2048,
+              "format": "link"
+            }
+          },
+          "required": [
+            "text",
+            "href"
+          ],
+          "additionalProperties": false
+        },
+        "secondaryCta": {
+          "type": "object",
+          "properties": {
+            "text": {
+              "type": "string",
+              "maxLength": 10000
+            },
+            "href": {
+              "type": "string",
+              "maxLength": 2048,
+              "format": "link"
+            }
+          },
+          "required": [
+            "text",
+            "href"
+          ],
+          "additionalProperties": false
+        },
+        "stats": {
+          "type": "array",
+          "maxItems": 100,
+          "items": {
+            "type": "object",
+            "properties": {
+              "value": {
+                "type": "string",
+                "maxLength": 10000
+              },
+              "label": {
+                "type": "string",
+                "maxLength": 10000
+              }
+            },
+            "required": [
+              "value",
+              "label"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "image": {
+          "type": "object",
+          "properties": {
+            "src": {
+              "type": "string",
+              "maxLength": 2048,
+              "format": "link"
+            },
+            "alt": {
+              "type": "string",
+              "maxLength": 10000
+            }
+          },
+          "required": [
+            "src",
+            "alt"
+          ],
+          "additionalProperties": false
+        },
+        "floatingCards": {
+          "type": "array",
+          "maxItems": 100,
+          "items": {
+            "type": "object",
+            "properties": {
+              "icon": {
+                "type": "string",
+                "maxLength": 10000
+              },
+              "label": {
+                "type": "string",
+                "maxLength": 10000
+              }
+            },
+            "required": [
+              "icon",
+              "label"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "badge",
+        "title",
+        "description",
+        "primaryCta",
+        "secondaryCta",
+        "stats",
+        "image",
+        "floatingCards"
+      ],
+      "additionalProperties": false
+    },
+    "defaults": {
+      "badge": "",
+      "title": {
+        "prefix": "",
+        "highlight": "",
+        "suffix": ""
+      },
+      "description": "",
+      "primaryCta": {
+        "text": "",
+        "href": "/"
+      },
+      "secondaryCta": {
+        "text": "",
+        "href": "/"
+      },
+      "stats": [],
+      "image": {
+        "src": "/",
+        "alt": ""
+      },
+      "floatingCards": []
+    },
+    "version": 1
+  },
+  {
+    "type": "sskg-about",
+    "label": "SSKG About",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "badge": {
+          "type": "string",
+          "maxLength": 10000
+        },
+        "title": {
+          "type": "object",
+          "properties": {
+            "prefix": {
+              "type": "string",
+              "maxLength": 10000
+            },
+            "highlight": {
+              "type": "string",
+              "maxLength": 10000
+            },
+            "suffix": {
+              "type": "string",
+              "maxLength": 10000
+            }
+          },
+          "required": [
+            "prefix",
+            "highlight",
+            "suffix"
+          ],
+          "additionalProperties": false
+        },
+        "paragraphs": {
+          "type": "array",
+          "maxItems": 100,
+          "items": {
+            "type": "string",
+            "maxLength": 10000
+          }
+        },
+        "experienceBadge": {
+          "type": "object",
+          "properties": {
+            "value": {
+              "type": "string",
+              "maxLength": 10000
+            },
+            "label": {
+              "type": "string",
+              "maxLength": 10000
+            }
+          },
+          "required": [
+            "value",
+            "label"
+          ],
+          "additionalProperties": false
+        },
+        "image": {
+          "type": "object",
+          "properties": {
+            "src": {
+              "type": "string",
+              "maxLength": 2048,
+              "format": "link"
+            },
+            "alt": {
+              "type": "string",
+              "maxLength": 10000
+            }
+          },
+          "required": [
+            "src",
+            "alt"
+          ],
+          "additionalProperties": false
+        },
+        "highlights": {
+          "type": "array",
+          "maxItems": 100,
+          "items": {
+            "type": "string",
+            "maxLength": 10000
+          }
+        },
+        "cta": {
+          "type": "object",
+          "properties": {
+            "text": {
+              "type": "string",
+              "maxLength": 10000
+            },
+            "href": {
+              "type": "string",
+              "maxLength": 2048,
+              "format": "link"
+            }
+          },
+          "required": [
+            "text",
+            "href"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "badge",
+        "title",
+        "paragraphs",
+        "experienceBadge",
+        "image",
+        "highlights",
+        "cta"
+      ],
+      "additionalProperties": false
+    },
+    "defaults": {
+      "badge": "",
+      "title": {
+        "prefix": "",
+        "highlight": "",
+        "suffix": ""
+      },
+      "paragraphs": [],
+      "experienceBadge": {
+        "value": "",
+        "label": ""
+      },
+      "image": {
+        "src": "/",
+        "alt": ""
+      },
+      "highlights": [],
+      "cta": {
+        "text": "",
+        "href": "/"
+      }
+    },
+    "version": 1
+  },
+  {
+    "type": "sskg-rooms",
+    "label": "SSKG Rooms",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string",
+          "maxLength": 10000
+        },
+        "description": {
+          "type": "string",
+          "maxLength": 10000
+        },
+        "bookButtonText": {
+          "type": "string",
+          "maxLength": 10000
+        },
+        "priceUnit": {
+          "type": "string",
+          "maxLength": 10000
+        },
+        "categories": {
+          "type": "array",
+          "maxItems": 100,
+          "items": {
+            "type": "string",
+            "maxLength": 10000
+          }
+        },
+        "rooms": {
+          "type": "array",
+          "maxItems": 100,
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "maxLength": 10000
+              },
+              "name": {
+                "type": "string",
+                "maxLength": 10000
+              },
+              "category": {
+                "type": "string",
+                "maxLength": 10000
+              },
+              "price": {
+                "type": "number",
+                "minimum": 0
+              },
+              "description": {
+                "type": "string",
+                "maxLength": 10000
+              },
+              "amenities": {
+                "type": "array",
+                "maxItems": 100,
+                "items": {
+                  "type": "string",
+                  "maxLength": 10000
+                }
+              },
+              "image": {
+                "type": "string",
+                "maxLength": 2048,
+                "format": "link"
+              }
+            },
+            "required": [
+              "id",
+              "name",
+              "category",
+              "price",
+              "description",
+              "amenities",
+              "image"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "currencyLabel": {
+          "type": "string",
+          "maxLength": 10000
+        }
+      },
+      "required": [
+        "title",
+        "description",
+        "bookButtonText",
+        "priceUnit",
+        "categories",
+        "rooms",
+        "currencyLabel"
+      ],
+      "additionalProperties": false
+    },
+    "defaults": {
+      "title": "",
+      "description": "",
+      "bookButtonText": "",
+      "priceUnit": "",
+      "categories": [],
+      "rooms": [],
+      "currencyLabel": ""
+    },
+    "version": 1
+  },
+  {
+    "type": "sskg-dining",
+    "label": "SSKG Dining",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "badge": {
+          "type": "string",
+          "maxLength": 10000
+        },
+        "title": {
+          "type": "object",
+          "properties": {
+            "prefix": {
+              "type": "string",
+              "maxLength": 10000
+            },
+            "highlight": {
+              "type": "string",
+              "maxLength": 10000
+            }
+          },
+          "required": [
+            "prefix",
+            "highlight"
+          ],
+          "additionalProperties": false
+        },
+        "description": {
+          "type": "string",
+          "maxLength": 10000
+        },
+        "cartButtonText": {
+          "type": "string",
+          "maxLength": 10000
+        },
+        "addToCartText": {
+          "type": "string",
+          "maxLength": 10000
+        },
+        "categories": {
+          "type": "array",
+          "maxItems": 100,
+          "items": {
+            "type": "string",
+            "maxLength": 10000
+          }
+        },
+        "items": {
+          "type": "array",
+          "maxItems": 100,
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "maxLength": 10000
+              },
+              "name": {
+                "type": "string",
+                "maxLength": 10000
+              },
+              "category": {
+                "type": "string",
+                "maxLength": 10000
+              },
+              "price": {
+                "type": "number",
+                "minimum": 0
+              },
+              "description": {
+                "type": "string",
+                "maxLength": 10000
+              },
+              "image": {
+                "type": "string",
+                "maxLength": 2048,
+                "format": "link"
+              },
+              "tag": {
+                "type": "string",
+                "maxLength": 10000
+              }
+            },
+            "required": [
+              "id",
+              "name",
+              "category",
+              "price",
+              "description",
+              "image",
+              "tag"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "currencyLabel": {
+          "type": "string",
+          "maxLength": 10000
+        }
+      },
+      "required": [
+        "badge",
+        "title",
+        "description",
+        "cartButtonText",
+        "addToCartText",
+        "categories",
+        "items",
+        "currencyLabel"
+      ],
+      "additionalProperties": false
+    },
+    "defaults": {
+      "badge": "",
+      "title": {
+        "prefix": "",
+        "highlight": ""
+      },
+      "description": "",
+      "cartButtonText": "",
+      "addToCartText": "",
+      "categories": [],
+      "items": [],
+      "currencyLabel": ""
+    },
+    "version": 1
+  },
+  {
+    "type": "sskg-reviews",
+    "label": "SSKG Reviews",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string",
+          "maxLength": 10000
+        },
+        "subtitle": {
+          "type": "string",
+          "maxLength": 10000
+        },
+        "reviews": {
+          "type": "array",
+          "maxItems": 100,
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "maxLength": 10000
+              },
+              "name": {
+                "type": "string",
+                "maxLength": 10000
+              },
+              "location": {
+                "type": "string",
+                "maxLength": 10000
+              },
+              "rating": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 5
+              },
+              "text": {
+                "type": "string",
+                "maxLength": 10000
+              }
+            },
+            "required": [
+              "id",
+              "name",
+              "location",
+              "rating",
+              "text"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "title",
+        "subtitle",
+        "reviews"
+      ],
+      "additionalProperties": false
+    },
+    "defaults": {
+      "title": "",
+      "subtitle": "",
+      "reviews": []
+    },
+    "version": 1
+  },
+  {
+    "type": "sskg-contact",
+    "label": "SSKG Contact",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "badge": {
+          "type": "string",
+          "maxLength": 10000
+        },
+        "title": {
+          "type": "object",
+          "properties": {
+            "prefix": {
+              "type": "string",
+              "maxLength": 10000
+            },
+            "highlight": {
+              "type": "string",
+              "maxLength": 10000
+            }
+          },
+          "required": [
+            "prefix",
+            "highlight"
+          ],
+          "additionalProperties": false
+        },
+        "description": {
+          "type": "string",
+          "maxLength": 10000
+        },
+        "contactInfo": {
+          "type": "array",
+          "maxItems": 100,
+          "items": {
+            "type": "object",
+            "properties": {
+              "icon": {
+                "type": "string",
+                "maxLength": 10000
+              },
+              "title": {
+                "type": "string",
+                "maxLength": 10000
+              },
+              "content": {
+                "type": "string",
+                "maxLength": 10000
+              }
+            },
+            "required": [
+              "icon",
+              "title",
+              "content"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "map": {
+          "type": "object",
+          "properties": {
+            "embedUrl": {
+              "type": "string",
+              "maxLength": 2048,
+              "format": "link"
+            }
+          },
+          "required": [
+            "embedUrl"
+          ],
+          "additionalProperties": false
+        },
+        "form": {
+          "type": "object",
+          "properties": {
+            "title": {
+              "type": "string",
+              "maxLength": 10000
+            },
+            "firstNameLabel": {
+              "type": "string",
+              "maxLength": 10000
+            },
+            "firstNamePlaceholder": {
+              "type": "string",
+              "maxLength": 10000
+            },
+            "lastNameLabel": {
+              "type": "string",
+              "maxLength": 10000
+            },
+            "lastNamePlaceholder": {
+              "type": "string",
+              "maxLength": 10000
+            },
+            "emailLabel": {
+              "type": "string",
+              "maxLength": 10000
+            },
+            "emailPlaceholder": {
+              "type": "string",
+              "maxLength": 10000
+            },
+            "messageLabel": {
+              "type": "string",
+              "maxLength": 10000
+            },
+            "messagePlaceholder": {
+              "type": "string",
+              "maxLength": 10000
+            },
+            "submitButtonText": {
+              "type": "string",
+              "maxLength": 10000
+            },
+            "toastSuccessMessage": {
+              "type": "string",
+              "maxLength": 10000
+            }
+          },
+          "required": [
+            "title",
+            "firstNameLabel",
+            "firstNamePlaceholder",
+            "lastNameLabel",
+            "lastNamePlaceholder",
+            "emailLabel",
+            "emailPlaceholder",
+            "messageLabel",
+            "messagePlaceholder",
+            "submitButtonText",
+            "toastSuccessMessage"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "badge",
+        "title",
+        "description",
+        "contactInfo",
+        "map",
+        "form"
+      ],
+      "additionalProperties": false
+    },
+    "defaults": {
+      "badge": "",
+      "title": {
+        "prefix": "",
+        "highlight": ""
+      },
+      "description": "",
+      "contactInfo": [],
+      "map": {
+        "embedUrl": "/"
+      },
+      "form": {
+        "title": "",
+        "firstNameLabel": "",
+        "firstNamePlaceholder": "",
+        "lastNameLabel": "",
+        "lastNamePlaceholder": "",
+        "emailLabel": "",
+        "emailPlaceholder": "",
+        "messageLabel": "",
+        "messagePlaceholder": "",
+        "submitButtonText": "",
+        "toastSuccessMessage": ""
+      }
+    },
+    "version": 1
+  },
+  {
+    "type": "sskg-page-intro",
+    "label": "SSKG Page Intro",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string",
+          "maxLength": 10000
+        },
+        "description": {
+          "type": "string",
+          "maxLength": 10000
+        }
+      },
+      "required": [
+        "title",
+        "description"
+      ],
+      "additionalProperties": false
+    },
+    "defaults": {
+      "title": "",
+      "description": ""
+    },
+    "version": 1
+  },
+  {
+    "type": "sskg-privacy",
+    "label": "SSKG Privacy",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string",
+          "maxLength": 10000
+        },
+        "description": {
+          "type": "string",
+          "maxLength": 10000
+        },
+        "sections": {
+          "type": "array",
+          "maxItems": 100,
+          "items": {
+            "type": "object",
+            "properties": {
+              "title": {
+                "type": "string",
+                "maxLength": 10000
+              },
+              "items": {
+                "type": "array",
+                "maxItems": 100,
+                "items": {
+                  "type": "string",
+                  "maxLength": 10000
+                }
+              },
+              "content": {
+                "type": "string",
+                "maxLength": 10000
+              }
+            },
+            "required": [
+              "title"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "title",
+        "description",
+        "sections"
+      ],
+      "additionalProperties": false
+    },
+    "defaults": {
+      "title": "",
+      "description": "",
+      "sections": []
+    },
+    "version": 1
+  },
+  {
+    "type": "sskg-terms",
+    "label": "SSKG Terms",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string",
+          "maxLength": 10000
+        },
+        "description": {
+          "type": "string",
+          "maxLength": 10000
+        },
+        "sections": {
+          "type": "array",
+          "maxItems": 100,
+          "items": {
+            "type": "object",
+            "properties": {
+              "title": {
+                "type": "string",
+                "maxLength": 10000
+              },
+              "content": {
+                "type": "string",
+                "maxLength": 10000
+              }
+            },
+            "required": [
+              "title",
+              "content"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "title",
+        "description",
+        "sections"
+      ],
+      "additionalProperties": false
+    },
+    "defaults": {
+      "title": "",
+      "description": "",
+      "sections": []
+    },
+    "version": 1
+  },
+  {
+    "type": "sskg-not-found",
+    "label": "SSKG Not Found",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string",
+          "maxLength": 10000
+        },
+        "title": {
+          "type": "string",
+          "maxLength": 10000
+        },
+        "description": {
+          "type": "string",
+          "maxLength": 10000
+        },
+        "action": {
+          "type": "object",
+          "properties": {
+            "label": {
+              "type": "string",
+              "maxLength": 10000
+            },
+            "href": {
+              "type": "string",
+              "maxLength": 2048,
+              "format": "link"
+            }
+          },
+          "required": [
+            "label",
+            "href"
+          ],
+          "additionalProperties": false
+        },
+        "illustration": {
+          "type": "object",
+          "properties": {
+            "base": {
+              "type": "object",
+              "properties": {
+                "src": {
+                  "type": "string",
+                  "maxLength": 2048,
+                  "format": "link"
+                },
+                "alt": {
+                  "type": "string",
+                  "maxLength": 10000
+                }
+              },
+              "required": [
+                "src",
+                "alt"
+              ],
+              "additionalProperties": false
+            },
+            "floatingFood": {
+              "type": "object",
+              "properties": {
+                "src": {
+                  "type": "string",
+                  "maxLength": 2048,
+                  "format": "link"
+                },
+                "alt": {
+                  "type": "string",
+                  "maxLength": 10000
+                }
+              },
+              "required": [
+                "src",
+                "alt"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "base",
+            "floatingFood"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "code",
+        "title",
+        "description",
+        "action",
+        "illustration"
+      ],
+      "additionalProperties": false
+    },
+    "defaults": {
+      "code": "",
+      "title": "",
+      "description": "",
+      "action": {
+        "label": "",
+        "href": "/"
+      },
+      "illustration": {
+        "base": {
+          "src": "/",
+          "alt": ""
+        },
+        "floatingFood": {
+          "src": "/",
+          "alt": ""
+        }
+      }
+    },
+    "version": 1
+  },
+  {
+    "type": "sskg-header",
+    "label": "SSKG Header",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "brand": {
+          "type": "object",
+          "properties": {
+            "prefix": {
+              "type": "string",
+              "maxLength": 10000
+            },
+            "highlight": {
+              "type": "string",
+              "maxLength": 10000
+            },
+            "href": {
+              "type": "string",
+              "maxLength": 2048,
+              "format": "link"
+            },
+            "logo": {
+              "type": "object",
+              "properties": {
+                "src": {
+                  "type": "string",
+                  "maxLength": 2048,
+                  "format": "link"
+                },
+                "alt": {
+                  "type": "string",
+                  "maxLength": 10000
+                }
+              },
+              "required": [
+                "src",
+                "alt"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "prefix",
+            "highlight",
+            "href",
+            "logo"
+          ],
+          "additionalProperties": false
+        },
+        "navLinks": {
+          "type": "array",
+          "maxItems": 100,
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "maxLength": 10000
+              },
+              "href": {
+                "type": "string",
+                "maxLength": 2048,
+                "format": "link"
+              }
+            },
+            "required": [
+              "name",
+              "href"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "booking": {
+          "type": "object",
+          "properties": {
+            "text": {
+              "type": "string",
+              "maxLength": 10000
+            },
+            "href": {
+              "type": "string",
+              "maxLength": 2048,
+              "format": "link"
+            }
+          },
+          "required": [
+            "text",
+            "href"
+          ],
+          "additionalProperties": false
+        },
+        "menuLabel": {
+          "type": "string",
+          "maxLength": 10000
+        }
+      },
+      "required": [
+        "brand",
+        "navLinks",
+        "booking",
+        "menuLabel"
+      ],
+      "additionalProperties": false
+    },
+    "defaults": {
+      "brand": {
+        "prefix": "",
+        "highlight": "",
+        "href": "/",
+        "logo": {
+          "src": "/",
+          "alt": ""
+        }
+      },
+      "navLinks": [],
+      "booking": {
+        "text": "",
+        "href": "/"
+      },
+      "menuLabel": ""
+    },
+    "version": 1
+  },
+  {
+    "type": "sskg-footer",
+    "label": "SSKG Footer",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "brand": {
+          "type": "object",
+          "properties": {
+            "prefix": {
+              "type": "string",
+              "maxLength": 10000
+            },
+            "highlight": {
+              "type": "string",
+              "maxLength": 10000
+            },
+            "href": {
+              "type": "string",
+              "maxLength": 2048,
+              "format": "link"
+            },
+            "logo": {
+              "type": "object",
+              "properties": {
+                "src": {
+                  "type": "string",
+                  "maxLength": 2048,
+                  "format": "link"
+                },
+                "alt": {
+                  "type": "string",
+                  "maxLength": 10000
+                }
+              },
+              "required": [
+                "src",
+                "alt"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "prefix",
+            "highlight",
+            "href",
+            "logo"
+          ],
+          "additionalProperties": false
+        },
+        "description": {
+          "type": "string",
+          "maxLength": 10000
+        },
+        "socialLinks": {
+          "type": "array",
+          "maxItems": 100,
+          "items": {
+            "type": "object",
+            "properties": {
+              "icon": {
+                "type": "string",
+                "maxLength": 10000
+              },
+              "label": {
+                "type": "string",
+                "maxLength": 10000
+              },
+              "href": {
+                "type": "string",
+                "maxLength": 2048,
+                "format": "link"
+              }
+            },
+            "required": [
+              "icon",
+              "label",
+              "href"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "navigationTitle": {
+          "type": "string",
+          "maxLength": 10000
+        },
+        "links": {
+          "type": "array",
+          "maxItems": 100,
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "maxLength": 10000
+              },
+              "href": {
+                "type": "string",
+                "maxLength": 2048,
+                "format": "link"
+              }
+            },
+            "required": [
+              "name",
+              "href"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "servicesTitle": {
+          "type": "string",
+          "maxLength": 10000
+        },
+        "services": {
+          "type": "array",
+          "maxItems": 100,
+          "items": {
+            "type": "string",
+            "maxLength": 10000
+          }
+        },
+        "contactTitle": {
+          "type": "string",
+          "maxLength": 10000
+        },
+        "contactInfo": {
+          "type": "array",
+          "maxItems": 100,
+          "items": {
+            "type": "object",
+            "properties": {
+              "icon": {
+                "type": "string",
+                "maxLength": 10000
+              },
+              "text": {
+                "type": "string",
+                "maxLength": 10000
+              }
+            },
+            "required": [
+              "icon",
+              "text"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "copyright": {
+          "type": "string",
+          "maxLength": 10000
+        },
+        "legalLinks": {
+          "type": "array",
+          "maxItems": 100,
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "maxLength": 10000
+              },
+              "href": {
+                "type": "string",
+                "maxLength": 2048,
+                "format": "link"
+              }
+            },
+            "required": [
+              "name",
+              "href"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "brand",
+        "description",
+        "socialLinks",
+        "navigationTitle",
+        "links",
+        "servicesTitle",
+        "services",
+        "contactTitle",
+        "contactInfo",
+        "copyright",
+        "legalLinks"
+      ],
+      "additionalProperties": false
+    },
+    "defaults": {
+      "brand": {
+        "prefix": "",
+        "highlight": "",
+        "href": "/",
+        "logo": {
+          "src": "/",
+          "alt": ""
+        }
+      },
+      "description": "",
+      "socialLinks": [],
+      "navigationTitle": "",
+      "links": [],
+      "servicesTitle": "",
+      "services": [],
+      "contactTitle": "",
+      "contactInfo": [],
+      "copyright": "",
+      "legalLinks": []
+    },
+    "version": 1
+  },
+  {
+    "type": "sskg-metadata",
+    "label": "SSKG Metadata",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string",
+          "maxLength": 10000
+        },
+        "description": {
+          "type": "string",
+          "maxLength": 10000
+        },
+        "keywords": {
+          "type": "string",
+          "maxLength": 10000
+        },
+        "icon": {
+          "type": "string",
+          "maxLength": 10000
+        }
+      },
+      "required": [
+        "title",
+        "description",
+        "keywords",
+        "icon"
+      ],
+      "additionalProperties": false
+    },
+    "defaults": {
+      "title": "",
+      "description": "",
+      "keywords": "",
+      "icon": ""
+    },
+    "version": 1
+  }
+]
