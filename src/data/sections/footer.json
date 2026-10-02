@@ -1,0 +1,81 @@
+{
+  "brand": {
+    "prefix": "Syangja",
+    "highlight": "Khaja Ghar",
+    "href": "/",
+    "logo": {
+      "src": "/icon.png",
+      "alt": "Syangja Khaja Ghar Logo"
+    }
+  },
+  "description": "Crafting unforgettable memories through authentic Nepali hospitality and timeless traditional flavors since 25 years.",
+  "socialLinks": [
+    {
+      "icon": "Facebook",
+      "label": "Facebook",
+      "href": "#"
+    },
+    {
+      "icon": "Instagram",
+      "label": "Instagram",
+      "href": "#"
+    },
+    {
+      "icon": "Twitter",
+      "label": "Twitter",
+      "href": "#"
+    }
+  ],
+  "navigationTitle": "Explore",
+  "links": [
+    {
+      "name": "Home",
+      "href": "/"
+    },
+    {
+      "name": "Our Accommodations",
+      "href": "/rooms"
+    },
+    {
+      "name": "Dining Experience",
+      "href": "/dining"
+    },
+    {
+      "name": "Our Story",
+      "href": "/about"
+    }
+  ],
+  "servicesTitle": "Services",
+  "services": [
+    "Luxury Stay",
+    "Traditional Dining",
+    "Event Spaces",
+    "Travel Desk"
+  ],
+  "contactTitle": "Contact",
+  "contactInfo": [
+    {
+      "icon": "MapPin",
+      "text": "Kawasoti-02, Nawalpur\nLumbini, Nepal"
+    },
+    {
+      "icon": "Phone",
+      "text": "+977 9801234567"
+    },
+    {
+      "icon": "Mail",
+      "text": "info@syangjasundar.com"
+    }
+  ],
+  "copyright": "Syangja Khaja Ghar. Designed with heart.",
+  "legalLinks": [
+    {
+      "name": "Privacy Policy",
+      "href": "/privacy"
+    },
+    {
+      "name": "Terms of Service",
+      "href": "/terms"
+    }
+  ]
+}

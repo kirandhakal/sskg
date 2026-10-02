@@ -7,7 +7,9 @@ import { Button } from '../ui/Button';
 import { ThemeToggle } from '../ui/ThemeToggle';
 import { cn } from '@/lib/utils';
 
-export const Header = () => {
+import fallbackData from '@/data/sections/header.json';
+
+export const Header = ({ data = fallbackData }: { data?: typeof fallbackData }) => {
     const [isOpen, setIsOpen] = React.useState(false);
     const [scrolled, setScrolled] = React.useState(false);
 
@@ -17,13 +19,7 @@ export const Header = () => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    const navLinks = [
-        { name: 'Home', href: '/' },
-        { name: 'Rooms', href: '/rooms' },
-        { name: 'Dining', href: '/dining' },
-        { name: 'About', href: '/about' },
-        { name: 'Contact', href: '/contact' },
-    ];
+    const navLinks = data.navLinks;
 
     return (
         <header
@@ -35,16 +31,16 @@ export const Header = () => {
             )}
         >
             <div className="container-custom flex items-center justify-between">
-                <Link href="/" className="flex items-center space-x-3 group">
+                <Link href={data.brand.href} className="flex items-center space-x-3 group">
                     <div className="relative h-12 w-12 shrink-0 overflow-hidden rounded-full border-2 border-accent bg-card p-0.5 shadow-md shadow-brand/20 transition-transform group-hover:scale-105">
                         <img
-                            src="/icon.png"
-                            alt="Syangja Khaja Ghar Logo"
+                            src={data.brand.logo.src}
+                            alt={data.brand.logo.alt}
                             className="h-full w-full rounded-full object-cover"
                         />
                     </div>
                     <span className="text-xl font-bold tracking-tight text-foreground">
-                        Syangja <span className="text-brand">Khaja Ghar</span>
+                        {data.brand.prefix} <span className="text-brand">{data.brand.highlight}</span>
                     </span>
                 </Link>
 
@@ -61,7 +57,7 @@ export const Header = () => {
                     ))}
                     <div className="flex items-center space-x-2 ml-4">
                         <ThemeToggle />
-                        <Button size="sm" className="rounded-xl">Book Room</Button>
+                        <Link href={data.booking.href}><Button size="sm" className="rounded-xl">{data.booking.text}</Button></Link>
                     </div>
                 </nav>
 
@@ -69,6 +65,8 @@ export const Header = () => {
                 <div className="md:hidden flex items-center space-x-2">
                     <ThemeToggle />
                     <button
+                        aria-label={data.menuLabel}
+                        aria-expanded={isOpen}
                         onClick={() => setIsOpen(!isOpen)}
                         className="text-foreground p-2 hover:bg-brand/5 rounded-lg"
                     >
@@ -92,7 +90,7 @@ export const Header = () => {
                             </Link>
                         ))}
                         <div className="pt-4 px-4">
-                            <Button className="w-full rounded-xl">Book Room</Button>
+                            <Link href={data.booking.href} onClick={() => setIsOpen(false)}><Button className="w-full rounded-xl">{data.booking.text}</Button></Link>
                         </div>
                     </nav>
                 </div>

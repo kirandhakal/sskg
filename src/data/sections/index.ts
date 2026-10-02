@@ -17,3 +17,9 @@ export {
   pagesData,
   notFoundData,
 };
+
+export { default as headerData } from './header.json';
+
+export { default as footerData } from './footer.json';
+
+export { default as metadataData } from './metadata.json';

@@ -6,7 +6,7 @@ import { Mail, Phone, MapPin, Clock } from 'lucide-react';
 import { Button } from '../ui/Button';
 import { Card } from '../ui/Card';
 import Toast from '../ui/Toast';
-import contactData from '@/data/sections/contact.json';
+import fallbackData from '@/data/sections/contact.json';
 
 const smoothEase = [0.22, 1, 0.36, 1] as const;
 
@@ -17,7 +17,7 @@ const iconMap = {
     Clock,
 };
 
-export const ContactSection = () => {
+export const ContactSection = ({ data: contactData = fallbackData }: { data?: typeof fallbackData }) => {
     const [firstName, setFirstName] = React.useState('');
     const [lastName, setLastName] = React.useState('');
     const [email, setEmail] = React.useState('');
@@ -161,7 +161,7 @@ export const ContactSection = () => {
                                     </AnimatePresence>
                                 </div>
                             </form>
-                            <Toast open={toastOpen} onClose={() => setToastOpen(false)} message={contactData.form.toastSuccessMessage || "Sent"} />
+                            <Toast open={toastOpen} onClose={() => setToastOpen(false)} message={contactData.form.toastSuccessMessage} />
                         </Card>
                         <div className="absolute -top-10 -right-10 w-80 h-80 bg-brand/5 rounded-full blur-3xl -z-0" />
                         <div className="absolute -bottom-10 -left-10 w-80 h-80 bg-accent/5 rounded-full blur-3xl -z-0" />

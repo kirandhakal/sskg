@@ -2,14 +2,14 @@
 
 import * as React from 'react';
 import { motion } from 'framer-motion';
-import roomsData from '@/data/sections/rooms.json';
+import fallbackData from '@/data/sections/rooms.json';
 import { Card, CardContent, CardFooter } from '../ui/Card';
 import { Button } from '../ui/Button';
 import { cn } from '@/lib/utils';
 
 const smoothEase = [0.22, 1, 0.36, 1] as const;
 
-export const RoomsSection = () => {
+export const RoomsSection = ({ data: roomsData = fallbackData }: { data?: typeof fallbackData }) => {
     const [activeCategory, setActiveCategory] = React.useState('All');
 
     const filteredRooms = activeCategory === 'All'
@@ -71,7 +71,7 @@ export const RoomsSection = () => {
                                     />
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                                     <div className="absolute top-6 right-6 bg-card/95 backdrop-blur-md border border-border px-4 py-2 rounded-2xl font-black text-brand shadow-xl z-10">
-                                        Rs. {room.price} <span className="text-xs font-medium text-muted-foreground block text-right mt-[-4px]">{roomsData.priceUnit}</span>
+                                        {roomsData.currencyLabel} {room.price} <span className="text-xs font-medium text-muted-foreground block text-right mt-[-4px]">{roomsData.priceUnit}</span>
                                     </div>
                                 </div>
                                 <CardContent className="p-8 flex-grow">

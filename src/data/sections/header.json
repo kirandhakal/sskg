@@ -1,0 +1,38 @@
+{
+  "brand": {
+    "prefix": "Syangja",
+    "highlight": "Khaja Ghar",
+    "href": "/",
+    "logo": {
+      "src": "/icon.png",
+      "alt": "Syangja Khaja Ghar Logo"
+    }
+  },
+  "navLinks": [
+    {
+      "name": "Home",
+      "href": "/"
+    },
+    {
+      "name": "Rooms",
+      "href": "/rooms"
+    },
+    {
+      "name": "Dining",
+      "href": "/dining"
+    },
+    {
+      "name": "About",
+      "href": "/about"
+    },
+    {
+      "name": "Contact",
+      "href": "/contact"
+    }
+  ],
+  "booking": {
+    "text": "Book Room",
+    "href": "/contact"
+  },
+  "menuLabel": "Toggle menu"
+}

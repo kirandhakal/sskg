@@ -4,11 +4,11 @@ import { motion } from 'framer-motion';
 import { Check } from 'lucide-react';
 import Link from 'next/link';
 import { Button } from '../ui/Button';
-import aboutData from '@/data/sections/about.json';
+import fallbackData from '@/data/sections/about.json';
 
 const smoothEase = [0.22, 1, 0.36, 1] as const;
 
-export const AboutSection = () => {
+export const AboutSection = ({ data: aboutData = fallbackData }: { data?: typeof fallbackData }) => {
     return (
         <section id="about" className="py-24 bg-background overflow-hidden text-foreground">
             <div className="container-custom">
@@ -79,7 +79,7 @@ export const AboutSection = () => {
                         </div>
 
                         <div className="pt-6">
-                            <Link href="/about">
+                            <Link href={aboutData.cta.href}>
                                 <Button size="lg" className="rounded-2xl px-10 py-6 h-auto font-black shadow-xl shadow-brand/20 transition-all hover:scale-105">
                                     {aboutData.cta.text}
                                 </Button>

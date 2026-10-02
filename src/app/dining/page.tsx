@@ -1,20 +1,11 @@
-import { DiningSection } from '@/components/sections/DiningSection';
-import { pagesData } from '@/data/sections';
+import { CmsSections } from '@/components/sections/CmsSections';
+import { getPageSections, getPageMetadata } from '@/lib/cms';
 
-export default function DiningPage() {
-    const { hero } = pagesData.dining;
+export default async function Page() {
+  const sections = await getPageSections('dining');
+  return <main className="min-h-screen pt-24"><CmsSections sections={sections} /></main>;
+}
 
-    return (
-        <main className="min-h-screen pt-24">
-            <div className="py-12 bg-muted/30">
-                <div className="container-custom">
-                    <h1 className="text-4xl md:text-6xl font-bold mb-4">{hero.title}</h1>
-                    <p className="text-xl text-muted-foreground max-w-2xl">
-                        {hero.description}
-                    </p>
-                </div>
-            </div>
-            <DiningSection />
-        </main>
-    );
+export async function generateMetadata() {
+  return getPageMetadata('dining');
 }

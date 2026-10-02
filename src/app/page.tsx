@@ -1,19 +1,11 @@
-import { Hero } from '@/components/sections/Hero';
-import { AboutSection } from '@/components/sections/AboutSection';
-import { RoomsSection } from '@/components/sections/RoomsSection';
-import { DiningSection } from '@/components/sections/DiningSection';
-import ReviewsSection from '@/components/sections/ReviewsSection';
-import { ContactSection } from '@/components/sections/ContactSection';
+import { CmsSections } from '@/components/sections/CmsSections';
+import { getPageSections, getPageMetadata } from '@/lib/cms';
 
-export default function Home() {
-  return (
-    <main className="min-h-screen">
-      <Hero />
-      <AboutSection />
-      <RoomsSection />
-      <DiningSection />
-      <ReviewsSection />
-      <ContactSection />
-    </main>
-  );
+export default async function Page() {
+  const sections = await getPageSections('home');
+  return <main className="min-h-screen"><CmsSections sections={sections} /></main>;
+}
+
+export async function generateMetadata() {
+  return getPageMetadata('home');
 }

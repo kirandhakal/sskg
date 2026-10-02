@@ -4,11 +4,11 @@ import * as React from 'react';
 import { motion } from 'framer-motion';
 import { Star } from 'lucide-react';
 import { Card } from '@/components/ui/Card';
-import reviewsData from '@/data/sections/reviews.json';
+import fallbackData from '@/data/sections/reviews.json';
 
 const smoothEase = [0.22, 1, 0.36, 1] as const;
 
-export const ReviewsSection: React.FC = () => {
+export const ReviewsSection = ({ data: reviewsData = fallbackData }: { data?: typeof fallbackData }) => {
   return (
     <section id="reviews" className="py-24 bg-background">
       <div className="container-custom">

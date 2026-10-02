@@ -2,7 +2,7 @@
 
 import * as React from 'react';
 import { motion } from 'framer-motion';
-import diningData from '@/data/sections/dining.json';
+import fallbackData from '@/data/sections/dining.json';
 import { Card, CardContent } from '../ui/Card';
 import { Button } from '../ui/Button';
 import { ShoppingBag, Star } from 'lucide-react';
@@ -10,7 +10,7 @@ import { cn } from '@/lib/utils';
 
 const smoothEase = [0.22, 1, 0.36, 1] as const;
 
-export const DiningSection = () => {
+export const DiningSection = ({ data: diningData = fallbackData }: { data?: typeof fallbackData }) => {
     const [activeCategory, setActiveCategory] = React.useState('All');
     const [cartCount, setCartCount] = React.useState(0);
 
@@ -103,7 +103,7 @@ export const DiningSection = () => {
                                     <div>
                                         <div className="flex justify-between items-start mb-3">
                                             <h3 className="text-xl font-bold text-foreground">{item.name}</h3>
-                                            <span className="text-brand font-black text-lg">Rs.{item.price}</span>
+                                            <span className="text-brand font-black text-lg">{diningData.currencyLabel}{item.price}</span>
                                         </div>
                                         <p className="text-sm text-muted-foreground mb-6 line-clamp-2 leading-relaxed">
                                             {item.description}

@@ -3,11 +3,11 @@
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { Button } from '../ui/Button';
-import heroData from '@/data/sections/hero.json';
+import fallbackData from '@/data/sections/hero.json';
 
 const smoothTransition = { duration: 0.45, ease: [0.22, 1, 0.36, 1] as const };
 
-export const Hero = () => {
+export const Hero = ({ data: heroData = fallbackData }: { data?: typeof fallbackData }) => {
     return (
         <section className="relative min-h-[90vh] flex items-center pt-32 pb-24 overflow-hidden bg-background">
             <div className="container-custom grid lg:grid-cols-2 gap-16 items-center relative z-10">
